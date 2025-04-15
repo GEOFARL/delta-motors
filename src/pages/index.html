@@ -1,0 +1,37 @@
+@@include('../partials/_head.html', {
+  "title": "Delta Motors | Головна",
+  "cssFile": "index.min.css"
+})
+
+<body>
+  @@include('../partials/_header.html')
+
+  <main>
+    <section class="hero">
+      <h1>ВІДСТЕЖЕННЯ АВТО</h1>
+      <input type="text" placeholder="Введіть VIN-код" />
+      <button>🔍</button>
+    </section>
+
+    <section class="features">
+      <h2>ДОСТАВКА І ВІДСТЕЖЕННЯ АВТОМОБІЛЯ</h2>
+      <ul>
+        <li>📦 Гарантована безпечна доставка</li>
+        <li>📸 Фотозвіт перед відправкою</li>
+        <li>📍 Відстеження в реальному часі</li>
+        <li>🔔 Оповіщення про ключові етапи</li>
+      </ul>
+    </section>
+
+    <section class="contact">
+      <h2>НАШІ КОНТАКТИ</h2>
+      <p>м. Івано-Франківськ, вул. Маревча 3</p>
+      <p>📞 +38 097 647 17 68</p>
+      <button>Замовити дзвінок</button>
+    </section>
+  </main>
+
+  @@include('../partials/_footer.html')
+  @@include('../partials/_scripts.html', { "jsFile": "index.js" })
+</body>
+</html>

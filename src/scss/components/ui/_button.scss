@@ -1,0 +1,25 @@
+@use "../../base/colors";
+@use "../../base/typography";
+
+.cta-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  padding: 6px;
+  padding-left: 24px;
+  border-radius: 12px;
+  color: colors.$color-white;
+  text-decoration: none;
+  background-color: colors.$color-accent-2;
+  @include typography.button;
+
+  .cta-button-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-content: center;
+    background-color: colors.$color-white;
+    border-radius: 10px;
+  }
+}

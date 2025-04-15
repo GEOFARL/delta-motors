@@ -1,0 +1,90 @@
+@mixin text-style(
+  $family,
+  $weight,
+  $size,
+  $line-height,
+  $letter-spacing,
+  $style: normal,
+  $align: null,
+  $transform: null
+) {
+  font-family: $family, sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  font-style: $style;
+  vertical-align: middle;
+
+  @if $align != null {
+    text-align: $align;
+  }
+
+  @if $transform != null {
+    text-transform: $transform;
+  }
+}
+
+@mixin desktop-h1-140 {
+  @include text-style("Arimo", 700, 140px, 130%, -1px, italic, right);
+}
+
+@mixin desktop-h1-h-1 {
+  @include text-style("Arimo", 700, 80px, 130%, 0, italic, null, uppercase);
+}
+
+@mixin desktop-h2-54-b {
+  @include text-style("Arimo", 700, 54px, 130%, 0, normal, null, uppercase);
+}
+
+@mixin desktop-h2-54-r {
+  @include text-style("Arimo", 400, 54px, 120%, 0, normal, null, uppercase);
+}
+
+@mixin desktop-sb1-24-sb {
+  @include text-style("Arimo", 700, 24px, 140%, 0, normal, null, uppercase);
+}
+
+@mixin desktop-sb1-24-wix {
+  @include text-style("Wix Madefor Display", 400, 24px, 130%, 0);
+}
+
+@mixin desktop-sb1-24-m {
+  @include text-style("Wix Madefor Display", 500, 24px, 130%, 0);
+}
+
+@mixin desktop-sb1-24-sb-wix {
+  @include text-style("Wix Madefor Display", 600, 24px, 130%, 0);
+}
+
+@mixin desktop-sb2-28-b {
+  @include text-style("Arimo", 700, 28px, 130%, 0, normal, null, uppercase);
+}
+
+@mixin desktop-bt1-18-r {
+  @include text-style("Wix Madefor Display", 400, 18px, 150%, 0);
+}
+
+@mixin desktop-bt1-18-sb {
+  @include text-style("Wix Madefor Display", 600, 18px, 130%, 0);
+}
+
+@mixin desktop-bt2-16-r {
+  @include text-style("Wix Madefor Display", 400, 16px, 140%, 0);
+}
+
+@mixin desktop-bt2-16-sb {
+  @include text-style("Wix Madefor Display", 600, 16px, 140%, 0);
+}
+
+@mixin desktop-bt2-16-caps {
+  @include text-style("Arimo", 400, 16px, 130%, 0, normal, null, uppercase);
+}
+
+@mixin desktop-bt3-14-r {
+  @include text-style("Wix Madefor Display", 400, 14px, 140%, 0);
+}
+
+@mixin button {
+  @include text-style("Wix Madefor Display", 500, 18px, 140%, 0);
+}
