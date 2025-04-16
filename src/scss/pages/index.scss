@@ -17,7 +17,42 @@
   align-items: center;
   @include layout.max-width;
 
+  &-swiper {
+    position: relative;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      padding: 6px 8px;
+      border-radius: 4px;
+      background-color: colors.$color-white;
+      cursor: pointer;
+
+      position: absolute;
+      top: calc(50% - 45px);
+
+      img {
+        margin-bottom: -2px;
+      }
+
+      &:hover {
+        background-color: rgba(colors.$color-white, 0.9);
+      }
+    }
+
+    .swiper-button-next {
+      right: 26px;
+    }
+
+    .swiper-button-prev {
+      left: 8px;
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
   &__header {
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -46,10 +81,5 @@
     img {
       margin-left: -6px;
     }
-  }
-
-  &__list {
-    display: flex;
-    gap: 20px;
   }
 }

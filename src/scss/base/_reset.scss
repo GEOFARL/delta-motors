@@ -16,3 +16,13 @@ body {
   -moz-osx-font-smoothing: auto;
   text-rendering: optimizeSpeed;
 }
+
+.swiper {
+  overflow: hidden;
+}
+.swiper-wrapper {
+  display: flex;
+}
+.swiper-slide {
+  flex-shrink: 0;
+}
