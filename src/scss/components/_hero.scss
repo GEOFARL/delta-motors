@@ -11,7 +11,6 @@
   background-image: url("../assets/images/car-on-the-road-1.jpeg");
   background-size: cover;
   background-position: center;
-  overflow: hidden;
 
   &::before {
     content: "";
@@ -72,6 +71,23 @@
     img {
       height: 101%;
       transform: translateX(calc(-100% + 4px));
+    }
+  }
+
+  .car-models {
+    position: absolute;
+    bottom: -70px;
+    left: calc(50% - 150px);
+    z-index: 3;
+
+    display: flex;
+
+    & img:nth-child(2n) {
+      margin-left: 12px;
+    }
+
+    & img:nth-child(2n + 1) {
+      margin-left: -38px;
     }
   }
 }
