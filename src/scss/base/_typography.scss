@@ -88,3 +88,7 @@
 @mixin button {
   @include text-style("Wix Madefor Display", 500, 18px, 140%, 0);
 }
+
+@mixin header-subtitle {
+  @include text-style("Wix Madefor Display", 600, 32px, 130%, 0);
+}

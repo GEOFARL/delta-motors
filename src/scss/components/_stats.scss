@@ -1,0 +1,42 @@
+@use "../base/typography";
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 72px;
+  color: #c4c4c473;
+  margin-top: 140px;
+
+  .stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2px;
+
+    .stat-number {
+      @include typography.desktop-h2-54-b;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .stat-label {
+      @include typography.desktop-sb1-24-sb-wix;
+      color: #fafafa80;
+
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 80px;
+    background-color: #c4c4c4;
+  }
+}

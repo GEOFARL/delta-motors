@@ -6,11 +6,56 @@
 <body>
   @@include('../partials/_header.html')
 
-  <main>
+  <main class="main">
     <section class="hero">
-      <h1>ВІДСТЕЖЕННЯ АВТО</h1>
-      <input type="text" placeholder="Введіть VIN-код" />
-      <button>🔍</button>
+      <div class="hero-content">
+        <h1 class="hero-title">DELTA MOTORS</h1>
+        <p class="hero-subtitle">
+          Авто з Америки – надійний вибір для вас!
+        </p>
+        <a href="#contact" class="cta-button cta-button--alternative">
+          Зв’язатися з нами
+          <span class="cta-button-icon"
+            ><img src="/assets/icons/arrows/right-arrow-white.svg" alt="right arrow"
+          /></span>
+        </a>
+        <img class="hero-speed-arrow hero-speed-arrow--1" src="/assets/icons/graphic-elements/vector-arrow-dark.svg" alt="right speed arrow" />
+        <img class="hero-speed-arrow hero-speed-arrow--2" src="/assets/icons/graphic-elements/vector-arrow-dark.svg" alt="right speed arrow" />
+
+        <section class="stats">
+          <div class="stat-item">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">
+              <span>Автомобілів</span>
+              <span>в наявності</span>
+            </div>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">
+              <span>Нових</span>
+              <span>авто щодня</span>
+            </div>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">
+              <span>Проданих</span>
+              <span>автомобілів</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="bottom-block">
+        <img src="/assets/icons/layout/rectangle-1.svg" />
+      </div>
     </section>
 
     <section class="features">

@@ -27,4 +27,17 @@
   &:hover {
     background-color: rgba(colors.$color-accent-2, 0.8);
   }
+
+  &--alternative {
+    background-color: colors.$color-white;
+    color: colors.$color-txt;
+
+    .cta-button-icon {
+      background-color: colors.$color-accent-2;
+    }
+
+    &:hover {
+      background-color: colors.$color-light-grey;
+    }
+  }
 }

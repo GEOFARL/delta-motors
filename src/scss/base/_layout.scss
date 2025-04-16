@@ -11,7 +11,7 @@ $max-widths: (
   3xl: 1920px,
 );
 
-@mixin max-width($key: xl, $padding: 16px) {
+@mixin max-width($key: 3xl, $padding: 16px) {
   $width: map.get($max-widths, $key);
 
   max-width: $width;

@@ -5,7 +5,9 @@
 
 .header {
   padding: 12.5px;
-  background-color: black;
+  border-bottom: 1px solid #c4c4c466;
+  position: relative;
+  z-index: 2;
 
   .header-logo {
     width: 124px;
@@ -17,6 +19,10 @@
     align-items: center;
     gap: 64px;
     @include typography.button;
+
+    li {
+      list-style: none;
+    }
 
     a {
       text-decoration: none;
@@ -32,6 +38,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include layout.max-width(3xl);
+    @include layout.max-width;
   }
 }

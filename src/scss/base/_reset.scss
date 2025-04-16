@@ -1,4 +1,5 @@
 @use "./colors";
+@use "./layout";
 
 * {
   margin: 0;
@@ -9,4 +10,8 @@
 body {
   background-color: colors.$color-bg-light;
   font-family: "Wix Madefor Display", sans-serif;
+
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  text-rendering: optimizeSpeed;
 }
