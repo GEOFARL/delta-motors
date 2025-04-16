@@ -107,3 +107,4 @@ function serve() {
 }
 
 exports.default = series(htmlTask, scssTask, jsTask, assetsTask, serve);
+exports.build = series(htmlTask, scssTask, jsTask, assetsTask);
