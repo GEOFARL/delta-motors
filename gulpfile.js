@@ -4,6 +4,7 @@ const cleanCSS = require("gulp-clean-css");
 const sourcemaps = require("gulp-sourcemaps");
 const browserSync = require("browser-sync").create();
 const fileInclude = require("gulp-file-include");
+const replace = require("gulp-replace");
 
 const { rollup } = require("rollup");
 const resolve = require("@rollup/plugin-node-resolve").nodeResolve;
@@ -51,6 +52,7 @@ async function jsTask() {
 function htmlTask() {
   return src(["src/pages/*.html"])
     .pipe(fileInclude({ prefix: "@@", basepath: "@file" }))
+    .pipe(replace(/(src|href)=["']\/(.*?)["']/g, '$1="$2"'))
     .pipe(dest("dist"))
     .pipe(browserSync.stream());
 }
