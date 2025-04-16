@@ -13,6 +13,7 @@
   text-decoration: none;
   background-color: colors.$color-accent-2;
   @include typography.button;
+  transition: all 0.1s ease-in-out;
 
   .cta-button-icon {
     width: 44px;
@@ -21,5 +22,9 @@
     place-content: center;
     background-color: colors.$color-white;
     border-radius: 10px;
+  }
+
+  &:hover {
+    background-color: rgba(colors.$color-accent-2, 0.8);
   }
 }
