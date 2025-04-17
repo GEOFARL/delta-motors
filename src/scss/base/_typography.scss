@@ -96,3 +96,7 @@
 @mixin service-numbers {
   @include text-style("Arimo", 400, 32px, 140%, 0);
 }
+
+@mixin auction-subtitle {
+  @include text-style("Wix Madefor Display", 400, 20px, 130%, 0);
+}

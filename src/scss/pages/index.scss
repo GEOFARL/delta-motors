@@ -8,7 +8,8 @@
 @use "../base/layout";
 @use "../base/typography";
 
-.available-cars {
+.available-cars,
+.auction-cars {
   background-color: colors.$color-bg-light;
   padding: 140px 0 160px 0;
 
@@ -62,7 +63,8 @@
     z-index: 2;
     gap: 64px;
 
-    .available-cars__title {
+    .available-cars__title,
+    .auction-cars__title {
       display: flex;
       flex-direction: column;
       position: relative;
@@ -72,6 +74,12 @@
       strong {
         margin-left: 76px;
       }
+    }
+
+    .auction-cars__subtitle {
+      max-width: 324px;
+      margin-top: -40px;
+      @include typography.auction-subtitle;
     }
   }
 
@@ -84,6 +92,22 @@
     img {
       margin-left: -6px;
     }
+  }
+
+  .auction-cars__arrows {
+    right: -30px;
+  }
+
+  &__large-arrows {
+    position: absolute;
+    bottom: 140px;
+    left: -140px;
+  }
+
+  &__title-line {
+    position: absolute;
+    bottom: 70px;
+    left: -140px;
   }
 
   &__vector-arrow {
