@@ -178,7 +178,8 @@
         transition: all 0.3s ease;
       }
 
-      &:hover {
+      &:hover,
+      &.active {
         .service-item__content {
           color: colors.$color-blue-light;
         }
