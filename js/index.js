@@ -20533,12 +20533,20 @@
 	});
 
 	$(document).ready(function () {
-	  $(".service-item").each(function (index) {
-	    $(this).on("mouseenter", function () {
-	      $(".media-img").removeClass("active").fadeOut(600);
-	      $(`.media-img[data-index="${index + 1}"]`)
+	  const updateMedia = (index) => {
+	    const targets = [".media-img", ".media-content"];
+
+	    targets.forEach((selector) => {
+	      $(selector).removeClass("active").fadeOut(600);
+	      $(`${selector}[data-index="${index + 1}"]`)
 	        .addClass("active")
 	        .fadeIn(600);
+	    });
+	  };
+
+	  $(".service-item").each(function (index) {
+	    $(this).on("mouseenter", () => {
+	      updateMedia(index);
 	    });
 	  });
 	});
