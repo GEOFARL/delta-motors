@@ -111,11 +111,14 @@
 .services {
   background-color: colors.$color-accent-dark;
   padding: 80px 0 130px 0;
+  margin-top: 80px;
+  position: relative;
 
   &__container {
     display: flex;
     flex-direction: column;
     position: relative;
+    z-index: 1;
     gap: 108px;
 
     @include layout.max-width;
@@ -171,6 +174,17 @@
     }
   }
 
+  &__media-container {
+    position: relative;
+
+    .services__media-rectangle {
+      height: 720px;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+    }
+  }
+
   &__media {
     width: 900px;
     height: 700px;
@@ -209,5 +223,39 @@
     position: absolute;
     bottom: -20px;
     right: 230px;
+  }
+
+  &__layout-angle {
+    position: absolute;
+    z-index: 0;
+    top: -50px;
+    left: 0;
+    width: 100%;
+  }
+
+  &__blue-accent {
+    position: absolute;
+    z-index: -1;
+    top: -23px;
+    left: -6%;
+    width: 100%;
+  }
+
+  &__delta-motors {
+    position: absolute;
+    top: -50px;
+    right: 0;
+  }
+
+  &__vector-arrows {
+    position: absolute;
+    top: -190px;
+    right: 160px;
+  }
+
+  &__vector-arrows-2 {
+    position: absolute;
+    top: 90px;
+    left: 330px;
   }
 }
