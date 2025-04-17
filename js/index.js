@@ -20546,6 +20546,8 @@
 
 	  $(".service-item").each(function (index) {
 	    $(this).on("mouseenter", () => {
+	      $(".service-item").removeClass("active");
+	      $(this).addClass("active");
 	      updateMedia(index);
 	    });
 	  });
