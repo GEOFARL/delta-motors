@@ -92,3 +92,7 @@
 @mixin header-subtitle {
   @include text-style("Wix Madefor Display", 600, 32px, 130%, 0);
 }
+
+@mixin service-numbers {
+  @include text-style("Arimo", 400, 32px, 140%, 0);
+}
