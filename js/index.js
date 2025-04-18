@@ -20520,10 +20520,10 @@
 	Swiper.use(modules);
 
 	$(document).ready(function () {
-	  const initSwiper = (selector) => {
+	  const initSwiper = (selector, spaceBetween = 40) => {
 	    new Swiper(selector, {
 	      slidesPerView: 3,
-	      spaceBetween: 40,
+	      spaceBetween: spaceBetween,
 	      navigation: {
 	        nextEl: ".swiper-button-next",
 	        prevEl: ".swiper-button-prev",
@@ -20534,6 +20534,7 @@
 
 	  initSwiper(".available-cars-swiper");
 	  initSwiper(".auction-cars-swiper");
+	  initSwiper(".testimonials-swiper", 28);
 	});
 
 	$(document).ready(function () {
