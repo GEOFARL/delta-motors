@@ -664,6 +664,7 @@
     right: 0;
     left: unset;
     top: unset;
+    z-index: 2;
   }
 
   &__rectangle {
@@ -712,5 +713,133 @@
     bottom: -32px;
     z-index: -2;
     left: 38%;
+  }
+}
+
+.faq {
+  background-color: colors.$color-bg-light;
+  padding: 160px 0 180px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 64px;
+    @include layout.max-width;
+  }
+
+  &__title {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    gap: 32px;
+    @include typography.desktop-h2-54-r;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .faq-item {
+    background-color: colors.$color-white;
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.3s ease;
+    width: 945px;
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    &__number {
+      color: colors.$color-accent-2;
+      font-weight: 700;
+      margin-right: 16px;
+      @include typography.desktop-sb1-24-sb;
+    }
+
+    &__question {
+      color: colors.$color-txt;
+      flex-grow: 1;
+      @include typography.desktop-sb1-24-m;
+    }
+
+    &__content {
+      display: none;
+      color: colors.$color-txt;
+      @include typography.desktop-bt1-18-r;
+    }
+
+    &.active {
+      .faq-item__content {
+        display: block;
+      }
+    }
+  }
+
+  &-item__toggle {
+    width: 24px;
+    height: 24px;
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .icon--plus {
+      opacity: 1;
+    }
+
+    .icon--close {
+      opacity: 0;
+    }
+
+    .active & {
+      .icon--plus {
+        opacity: 0;
+      }
+
+      .icon--close {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__vector-arrows {
+    position: absolute;
+    top: 190px;
+    left: 40px;
+    z-index: 0;
+  }
+
+  &__logo {
+    position: absolute;
+    top: -210px;
+    left: -20px;
+    z-index: 0;
+  }
+
+  &__line {
+    position: absolute;
+    top: -300px;
+    right: 110px;
+    z-index: 0;
   }
 }
