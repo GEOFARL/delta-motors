@@ -10721,6 +10721,41 @@
 	  });
 	}
 
+	function initAccordion({
+	  itemSelector,
+	  headerSelector,
+	  contentSelector,
+	  allowMultiple = false,
+	}) {
+	  $(document).on("click", headerSelector, function () {
+	    const $item = $(this).closest(itemSelector);
+	    const $content = $item.find(contentSelector);
+	    const isActive = $item.hasClass("active");
+
+	    if (!allowMultiple) {
+	      $(itemSelector)
+	        .not($item)
+	        .each(function () {
+	          const $otherItem = $(this);
+	          const $otherContent = $otherItem.find(contentSelector);
+
+	          $otherItem.removeClass("active");
+	          $otherContent.stop(true, true).slideUp(200);
+	        });
+	    }
+
+	    if (isActive) {
+	      $content.stop(true, true).slideUp(200, () => {
+	        $item.removeClass("active");
+	      });
+	    } else {
+	      $content.stop(true, true).slideDown(200, () => {
+	        $item.addClass("active");
+	      });
+	    }
+	  });
+	}
+
 	/**
 	 * SSR Window 5.0.0
 	 * Better handling for window object in SSR environment
@@ -20561,6 +20596,13 @@
 	$(function () {
 	  initHeader();
 	  initContact();
+
+	  initAccordion({
+	    itemSelector: ".faq-item",
+	    headerSelector: ".faq-item__header",
+	    contentSelector: ".faq-item__content",
+	    allowMultiple: false,
+	  });
 
 	  console.log("Index page initialized");
 	});
