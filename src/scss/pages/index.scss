@@ -348,7 +348,8 @@
   }
 }
 
-.advantages {
+.advantages,
+.services-2 {
   background-color: colors.$color-txt;
   margin: 100px 0 80px 0;
   padding: 74px 0 180px 0;
@@ -502,7 +503,7 @@
     position: absolute;
     bottom: 80px;
     z-index: 1;
-    left: 80px;
+    left: 290px;
   }
 }
 
@@ -619,5 +620,97 @@
   }
   .swiper-button-next {
     right: 14px;
+  }
+}
+
+.services-2 {
+  &__bg-image {
+    background-image: url("../../assets/images/white-sports-car.jpeg");
+    background-position: 50% 55%;
+  }
+
+  &__packet {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__body {
+    padding-bottom: 200px;
+  }
+
+  &__packet-title {
+    @include typography.desktop-sb2-28-b;
+
+    span {
+      color: colors.$color-blue-light;
+    }
+  }
+
+  &__packet-subtitle {
+    @include typography.desktop-h2-54-b;
+
+    font-size: 64px;
+  }
+
+  &__body {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__vector-arrows {
+    bottom: -240px;
+    right: 0;
+    left: unset;
+    top: unset;
+  }
+
+  &__rectangle {
+    left: 10%;
+  }
+
+  &__title {
+    right: unset;
+    flex-direction: row;
+    gap: 32px;
+    left: 70px;
+  }
+
+  &__list {
+    list-style: none;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      &-text {
+        text-wrap: nowrap;
+        @include typography.desktop-sb1-24-wix;
+      }
+    }
+  }
+
+  &__lists {
+    display: flex;
+    gap: 123px;
+  }
+
+  &__vertical-line {
+    position: absolute;
+    left: -110px;
+    top: -290px;
+    height: 1100px;
+  }
+
+  &__rectangle-3 {
+    width: 100%;
+    bottom: -32px;
+    z-index: -2;
+    left: 38%;
   }
 }
