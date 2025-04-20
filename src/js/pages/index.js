@@ -4,10 +4,12 @@ import initContact from "../components/contact";
 import { initAccordion } from "../components/accordion";
 import "../components/cardSwiper";
 import "../components/serviceItem";
+import { initSmartForm } from "../components/form";
 
 $(function () {
   initHeader();
   initContact();
+  initSmartForm();
 
   initAccordion({
     itemSelector: ".faq-item",
