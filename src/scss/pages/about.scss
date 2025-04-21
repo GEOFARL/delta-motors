@@ -96,3 +96,61 @@
     }
   }
 }
+
+.numbers-section {
+  &__delta-motors {
+    position: absolute;
+    top: -140px;
+    right: 200px;
+    z-index: 3;
+  }
+
+  &__container {
+    position: relative;
+    padding: 94px 0 220px;
+    @include layout.max-width;
+  }
+
+  &__grid {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 4;
+    gap: 45px;
+  }
+
+  .numbers-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 366px;
+
+    .numbers-value {
+      @include typography.number-value;
+      color: #455c7a4d;
+    }
+
+    .numbers-label {
+      @include typography.desktop-sb2-28-b;
+    }
+  }
+
+  .numbers-divider {
+    height: 102px;
+    width: 1px;
+    background-color: colors.$color-accent-1;
+  }
+
+  &__vector-arrows {
+    position: absolute;
+    top: -70px;
+    left: 0;
+    z-index: 3;
+  }
+
+  &__numbers {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+  }
+}

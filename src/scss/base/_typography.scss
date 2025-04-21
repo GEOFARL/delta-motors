@@ -100,3 +100,7 @@
 @mixin auction-subtitle {
   @include text-style("Wix Madefor Display", 400, 20px, 130%, 0);
 }
+
+@mixin number-value {
+  @include text-style("Arimo", 700, 72px, 130%, 0);
+}
