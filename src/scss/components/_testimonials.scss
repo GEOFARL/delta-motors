@@ -1,0 +1,212 @@
+@use "../base/colors";
+@use "../base/layout";
+@use "../base/typography";
+
+.testimonials {
+  background-color: colors.$color-bg-light;
+  padding: 140px 0 200px 0;
+  position: relative;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+
+  @include layout.max-width;
+
+  &-swiper {
+    width: 100%;
+    max-width: 1250px;
+    position: relative;
+    z-index: 2;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      padding: 6px 8px;
+      border-radius: 4px;
+      background-color: colors.$color-bg-light;
+      cursor: pointer;
+      position: absolute;
+      top: calc(50% - 15px);
+
+      img {
+        margin-bottom: -2px;
+      }
+
+      &:hover {
+        background-color: rgba(colors.$color-bg-light, 0.8);
+      }
+    }
+
+    .swiper-button-next {
+      right: 14px;
+    }
+
+    .swiper-button-prev {
+      left: 4px;
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+
+    @include layout.max-width;
+  }
+
+  &__header {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 48px;
+    gap: 64px;
+    position: relative;
+    z-index: 2;
+
+    .available-cars__title,
+    .auction-cars__title {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      @include typography.desktop-h2-54-r;
+
+      strong {
+        margin-left: 76px;
+      }
+    }
+
+    .auction-cars__subtitle {
+      max-width: 324px;
+      margin-top: -40px;
+      @include typography.auction-subtitle;
+    }
+  }
+
+  &__title {
+    color: colors.$color-txt;
+    @include typography.desktop-h2-54-r;
+    margin-left: 76px;
+
+    span {
+      font-weight: 700;
+      margin-left: -76px;
+    }
+  }
+
+  &__subtitle {
+    color: colors.$color-dark-grey;
+    @include typography.desktop-bt1-18-r;
+  }
+
+  &__arrows {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    right: -10px;
+
+    img {
+      margin-left: -6px;
+    }
+  }
+
+  .auction-cars__arrows {
+    right: -30px;
+  }
+
+  &__large-arrows {
+    position: absolute;
+    bottom: 140px;
+    left: -140px;
+  }
+
+  &__title-line {
+    position: absolute;
+    bottom: 70px;
+    left: -140px;
+  }
+
+  &__vector-arrow {
+    z-index: 0;
+    position: absolute;
+    top: -210px;
+    transform: scale(1.1);
+
+    &--1 {
+      left: -70px;
+    }
+
+    &--2 {
+      left: -650px;
+    }
+  }
+
+  &__vector-arrows {
+    position: absolute;
+    top: 14px;
+    right: 110px;
+  }
+
+  &__vector-arrows-2 {
+    position: absolute;
+    top: -60px;
+    right: 270px;
+  }
+
+  &__text-image {
+    position: absolute;
+    bottom: 40px;
+    right: 110px;
+  }
+
+  .testimonial-card {
+    background: colors.$color-white;
+    border-radius: 12px;
+    padding: 40px 42px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+
+    &__header {
+      display: flex;
+      gap: 16px;
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+    }
+
+    &__avatar {
+      width: 74px;
+      height: 74px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    &__name {
+      @include typography.desktop-bt1-18-r;
+    }
+
+    &__handle {
+      color: colors.$color-dark-grey;
+      @include typography.desktop-bt3-14-r;
+    }
+
+    &__text {
+      max-width: 325px;
+      @include typography.desktop-bt2-16-r;
+    }
+
+    &__quote {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+    }
+  }
+}
