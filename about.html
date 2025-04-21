@@ -39,24 +39,96 @@
 
   <main class="about">
     <section class="hero">
-      <h1>Про нас</h1>
-      <p>Ми — Delta Motors, надійний партнер у доставці авто зі США в Україну.</p>
+      <div class="hero-content">
+        <h1 class="hero-title">ПРО НАС</h1>
+        <p class="hero-subtitle">
+           Ми – команда професіоналів, яка  вже понад 5 років допомагає українцям купувати авто з США без зайвих клопотів. Ми хочемо, щоб кожен мав доступ до якісних та надійних автомобілів за справедливими цінами.
+        </p>
+
+        <img class="hero__about-us" src="assets/icons/line-vectors/about-us.svg" alt="about us" />
+        <img class="hero__protectors" src="assets/images/protectors-2.png" alt="protectors" />
+      </div>
+
+      <div class="bottom-block">
+        <img src="assets/icons/layout/rectangle-1.svg" />
+      </div>
     </section>
 
-    <section class="mission">
-      <h2>Наша Місія</h2>
-      <p>
-        Забезпечити безпечну, швидку та прозору доставку автомобілів для наших клієнтів.
-        Ми працюємо напряму з аукціонами, фотографуємо кожен етап і забезпечуємо повне відстеження.
+    <section class="form-section">
+  <div class="form-section__container">
+    <div class="form-section__form-block">
+      <h2 class="form-section__title">ЗВ’ЯЖІТЬСЯ З НАМИ!</h2>
+      <p class="form-section__description">
+        Маєте питання або потребуєте додаткової інформації?<br />
+        Залиште свої контактні дані, і наша команда зв’яжеться з вами найближчим
+        часом.
       </p>
-    </section>
 
-    <section class="contact">
-      <h2>Контакти</h2>
-      <p>м. Івано-Франківськ, вул. Маревча 3</p>
-      <p>📞 +38 097 647 17 68</p>
-      <button>Замовити дзвінок</button>
-    </section>
+      <form class="smart-form" data-validate="true" novalidate>
+        <div class="form-field" data-field>
+          <input type="text" name="name" required />
+          <label>Ваше ім’я</label>
+          <span class="form-error">Це поле обов’язкове</span>
+        </div>
+
+        <div class="form-field" data-field>
+          <input type="tel" name="phone" required pattern="^\+?\d{10,15}$" />
+          <label>Номер телефону</label>
+          <span class="form-error">Невірний номер телефону</span>
+        </div>
+
+        <div class="form-field" data-field>
+          <input type="email" name="email" required />
+          <label>Електронна пошта</label>
+          <span class="form-error">Невірна електронна адреса</span>
+        </div>
+
+        <label class="form-checkbox">
+          <input type="checkbox" name="consent" required />
+          Я погоджуюсь на обробку моїх контактних даних
+        </label>
+
+        <button type="submit" class="cta-button">
+          Надіслати
+          <span class="cta-button-icon">
+            <img src="assets/icons/arrows/right-arrow-blue.svg" alt="arrow" />
+          </span>
+        </button>
+
+        <img
+          class="smart-form__vector-arrows"
+          src="assets/icons/graphic-elements/vector-arrows-2.svg"
+          alt="vector arrows"
+        />
+      </form>
+    </div>
+
+    <div class="form-section__image-block">
+      <img
+        src="assets/icons/graphic-elements/delta-motors-2.svg"
+        alt="delta motors"
+        class="form-section__delta-motors"
+      />
+      <img
+        src="assets/icons/graphic-elements/vector-arrows-2.svg"
+        alt="vector arrows"
+        class="form-section__vector-arrows-1"
+      />
+      <img
+        src="assets/icons/graphic-elements/vector-arrows-2.svg"
+        alt="vector arrows"
+        class="form-section__vector-arrows-2"
+      />
+      <img
+        src="assets/icons/line-vectors/contact-us.svg"
+        alt="contact us"
+        class="form-section__contact-us"
+      />
+      <img src="assets/images/audi-in-dark.jpeg" alt="Contact visual" />
+    </div>
+  </div>
+</section>
+
   </main>
 
   <footer class="site-footer">
