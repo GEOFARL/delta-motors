@@ -1,5 +1,97 @@
 @use "../base/reset";
+@use "../base/layout";
+@use "../base/colors";
+@use "../base/typography";
 @use "../components/header";
 @use "../components/footer";
-@use "../components/contact";
-@use "../components/about";
+@use "../components/ui/form.scss";
+
+.hero {
+  position: relative;
+  top: -90px;
+  height: 648px;
+  padding-top: 161px;
+  background-image: url("../assets/images/rodan-can.jpeg");
+  background-size: cover;
+  background-position: 50% 61%;
+  z-index: 1;
+
+  &__about-us {
+    position: absolute;
+    bottom: -70px;
+    left: 30px;
+  }
+
+  &__protectors {
+    position: absolute;
+    top: -410px;
+    right: -360px;
+    transform: scale(0.6);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 30, 30, 0.7);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+    padding-left: 100px !important;
+
+    @include layout.max-width;
+
+    .hero-title {
+      @include typography.desktop-h1-h-1;
+      color: #f8f7fc;
+      margin-bottom: 32px;
+      z-index: 3;
+    }
+
+    .hero-subtitle {
+      color: colors.$color-white;
+      @include typography.desktop-bt1-18-r;
+      margin-bottom: 56px;
+      max-width: 554px;
+      z-index: 3;
+    }
+  }
+
+  .bottom-block {
+    height: 74px;
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+    right: calc(-50%);
+    bottom: -8px;
+    background-color: colors.$color-bg-light;
+
+    img {
+      height: 101%;
+      transform: translateX(calc(-100% + 4px));
+    }
+  }
+
+  .car-models {
+    position: absolute;
+    bottom: -70px;
+    left: calc(50% - 150px);
+    z-index: 3;
+
+    display: flex;
+
+    & img:nth-child(2n) {
+      margin-left: 12px;
+    }
+
+    & img:nth-child(2n + 1) {
+      margin-left: -38px;
+    }
+  }
+}
