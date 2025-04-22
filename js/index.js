@@ -10707,14 +10707,6 @@
 	var jqueryExports = requireJquery();
 	var $ = /*@__PURE__*/getDefaultExportFromCjs(jqueryExports);
 
-	function initHeader() {
-	  $(".site-header").addClass("loaded");
-
-	  $(".menu-toggle").on("click", function () {
-	    $(".site-header nav ul").toggleClass("open");
-	  });
-	}
-
 	function initContact() {
 	  $(".contact button").on("click", function () {
 	    alert("Наш менеджер звʼяжеться з вами найближчим часом!");
@@ -20658,7 +20650,6 @@
 	}
 
 	$(function () {
-	  initHeader();
 	  initContact();
 	  initSmartForm();
 

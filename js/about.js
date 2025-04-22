@@ -10707,14 +10707,6 @@
 	var jqueryExports = requireJquery();
 	var $ = /*@__PURE__*/getDefaultExportFromCjs(jqueryExports);
 
-	function initHeader() {
-	  $(".site-header").addClass("loaded");
-
-	  $(".menu-toggle").on("click", function () {
-	    $(".site-header nav ul").toggleClass("open");
-	  });
-	}
-
 	/**
 	 * SSR Window 5.0.0
 	 * Better handling for window object in SSR environment
@@ -20532,7 +20524,6 @@
 	});
 
 	$(function () {
-	  initHeader();
 	  console.log("About page initialized");
 	});
 
