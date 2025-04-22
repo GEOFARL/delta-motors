@@ -6,3 +6,52 @@
 @use "../components/testimonials";
 @use "../components/footer";
 @use "../components/ui/form.scss";
+
+.hero {
+  position: relative;
+  top: -90px;
+  height: 318px;
+  background-color: colors.$color-accent-dark;
+  z-index: 1;
+
+  .bottom-block {
+    height: 32px;
+    width: 50%;
+    background-color: colors.$color-accent-dark;
+
+    position: absolute;
+    bottom: -32px;
+
+    .rectangle {
+      position: absolute;
+      top: -317px;
+      right: -750px;
+    }
+  }
+
+  &-content {
+    z-index: 2;
+    position: relative;
+    @include layout.max-width;
+  }
+
+  &__protectors-1 {
+    transform: scale(0.4) rotate(120deg);
+    position: absolute;
+    top: -450px;
+    left: -450px;
+  }
+
+  &__protectors-2 {
+    transform: scale(0.4) rotate(120deg);
+    position: absolute;
+    top: -440px;
+    right: -570px;
+  }
+
+  &__vector-arrows {
+    position: absolute;
+    top: 290px;
+    left: -140px;
+  }
+}
