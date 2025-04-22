@@ -2,5 +2,5 @@ import $ from "jquery";
 import "../components/cardSwiper";
 
 $(function () {
-  console.log("About page initialized");
+  console.log("Car details page initialized");
 });
