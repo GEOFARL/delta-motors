@@ -25,7 +25,7 @@
     .rectangle {
       position: absolute;
       top: -317px;
-      right: -750px;
+      right: -950px;
     }
   }
 
@@ -53,5 +53,213 @@
     position: absolute;
     top: 290px;
     left: -140px;
+  }
+}
+
+.car-details {
+  &__container {
+    display: flex;
+    gap: 26px;
+
+    position: relative;
+    top: -260px;
+    left: 50px;
+    z-index: 3;
+
+    @include layout.max-width;
+  }
+
+  &__header {
+    color: colors.$color-white;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 24px;
+
+    .car-details__vector-arrows-2 {
+      position: absolute;
+      transform: rotate(180deg);
+      top: 15px;
+      right: 360px;
+    }
+  }
+
+  &__title {
+    @include typography.desktop-h2-54-b;
+  }
+
+  &__price {
+    display: flex;
+    align-items: flex-end;
+    gap: 84px;
+  }
+
+  &__price-usd {
+    color: colors.$color-blue-light;
+    @include typography.desktop-h2-54-r;
+  }
+
+  &__price-uah {
+    color: colors.$color-light-grey;
+    @include typography.desktop-sb1-24-m;
+  }
+
+  &__images-container {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 16.5px;
+  }
+
+  &__main-image {
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+
+    .main-image-swiper {
+      position: relative;
+      z-index: 2;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: absolute;
+      padding: 8px;
+      border-radius: 4px;
+      background-color: colors.$color-bg-light;
+      cursor: pointer;
+      top: calc(50% - 15px);
+
+      &:hover {
+        background-color: rgba(colors.$color-bg-light, 0.8);
+      }
+    }
+
+    .swiper-button-next {
+      right: 4px;
+    }
+
+    .swiper-button-prev {
+      left: 4px;
+      img {
+        transform: rotate(180deg);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__more-images-container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    gap: 15.33px;
+  }
+
+  &__more-images-item {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 4px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    &-more {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: grid;
+      place-content: center;
+      color: colors.$color-white;
+      cursor: pointer;
+      @include typography.desktop-bt1-18-sb;
+    }
+  }
+
+  &__content-container {
+    width: 100%;
+
+    .cta-button {
+      justify-self: start;
+      justify-content: space-between;
+      padding-left: 50px;
+      margin-top: 56px;
+      width: 249px;
+    }
+  }
+
+  &__description {
+    margin-top: 48px;
+    max-width: 806px;
+
+    h3 {
+      @include typography.desktop-sb2-28-b;
+      margin-bottom: 24px;
+    }
+
+    ul {
+      margin-left: 32px;
+    }
+
+    p,
+    li {
+      @include typography.desktop-bt2-16-r;
+    }
+  }
+
+  &__characteristics {
+    margin-top: 96px;
+
+    &-title {
+      @include typography.desktop-sb2-28-b;
+    }
+
+    &-lists {
+      margin-top: 32px;
+      display: flex;
+      gap: 70px;
+      max-width: 806px;
+    }
+
+    &-list {
+      flex: 1;
+      list-style: none;
+    }
+
+    &-list-item {
+      display: flex;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid #c4c4c480;
+      margin-top: 18px;
+
+      @include typography.desktop-bt1-18-sb;
+
+      &-content {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+
+        p:last-child {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  &__vector-arrows-1 {
+    position: absolute;
+    bottom: -230px;
+    left: -90px;
   }
 }
