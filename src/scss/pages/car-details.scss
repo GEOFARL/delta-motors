@@ -262,4 +262,11 @@
     bottom: -230px;
     left: -90px;
   }
+
+  &__vertical-line {
+    position: absolute;
+    top: 90px;
+    right: 90px;
+    z-index: -1;
+  }
 }
