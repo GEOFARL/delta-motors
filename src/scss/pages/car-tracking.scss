@@ -1,0 +1,53 @@
+@use "../base/reset";
+@use "../base/layout";
+@use "../base/colors";
+@use "../base/typography";
+@use "../components/header";
+@use "../components/footer";
+
+.hero {
+  position: relative;
+  top: -90px;
+  height: 318px;
+  background-color: colors.$color-accent-dark;
+  z-index: 1;
+
+  .bottom-block {
+    height: 32px;
+    width: 50%;
+    background-color: colors.$color-accent-dark;
+
+    position: absolute;
+    bottom: -32px;
+    right: 0;
+    .rectangle {
+      position: absolute;
+      top: -363px;
+      right: 110px;
+    }
+  }
+
+  &-content {
+    z-index: 2;
+    position: relative;
+    @include layout.max-width;
+  }
+
+  &__protectors-1 {
+    transform: scale(0.4) rotate(120deg);
+    position: absolute;
+    top: -450px;
+    left: -450px;
+  }
+
+  &__protectors-2 {
+    transform: scale(0.4) rotate(120deg);
+    position: absolute;
+    top: -440px;
+    right: -570px;
+  }
+}
+
+.car-tracking {
+  padding: 200px 0;
+}

@@ -1,0 +1,26 @@
+@@include('../partials/_head.html', {
+  "title": "Delta Motors | Car Tracking",
+  "cssFile": "car-tracking.min.css"
+})
+
+<body>
+  @@include('../partials/_header.html')
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <img class="hero__protectors-1" src="assets/images/protectors.png" alt="protectors" />
+        <img class="hero__protectors-2" src="assets/images/protectors.png" alt="protectors" />
+      </div>
+      <div class="bottom-block">
+        <img class="rectangle" src="/assets/icons/layout/rectangle-7.svg" />
+      </div>
+    </section>
+
+    <section class="car-tracking">
+    </section>
+  </main>
+
+  @@include('../partials/_footer.html')
+  @@include('../partials/_scripts.html', { "jsFile": "car-tracking.js" })
+</body>
+</html>
