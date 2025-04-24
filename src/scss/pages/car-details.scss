@@ -338,6 +338,12 @@
     @include layout.max-width;
   }
 
+  &__line-vector {
+    position: absolute;
+    bottom: -110px;
+    left: 0;
+  }
+
   &__text-container {
     max-width: 600px;
     width: 100%;
