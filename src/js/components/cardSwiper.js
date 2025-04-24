@@ -16,6 +16,7 @@ $(document).ready(function () {
 
   initSwiper(".available-cars-swiper");
   initSwiper(".auction-cars-swiper");
+  initSwiper(".cars-for-u-swiper", 20);
   initSwiper(".main-image-swiper", 40, 1);
   initSwiper(".testimonials-swiper", 28);
 });
