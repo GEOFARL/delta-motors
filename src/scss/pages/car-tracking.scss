@@ -3,12 +3,13 @@
 @use "../base/colors";
 @use "../base/typography";
 @use "../components/header";
+@use "../components/ui/form";
 @use "../components/footer";
 
 .hero {
   position: relative;
   top: -90px;
-  height: 318px;
+  height: 395px;
   background-color: colors.$color-accent-dark;
   z-index: 1;
 
@@ -23,7 +24,7 @@
     .rectangle {
       position: absolute;
       top: -363px;
-      right: 110px;
+      right: 140px;
     }
   }
 
@@ -49,5 +50,81 @@
 }
 
 .car-tracking {
-  padding: 200px 0;
+  position: relative;
+  top: -330px;
+  left: 70px;
+  z-index: 2;
+
+  &__delta-motors {
+    position: absolute;
+    bottom: -140px;
+    right: 580px;
+  }
+
+  &__container {
+    @include layout.max-width;
+    display: flex;
+    gap: 83px;
+  }
+
+  &__title {
+    color: colors.$color-white;
+    margin-bottom: 140px;
+    @include typography.desktop-h1-h-1;
+  }
+
+  &__image-block {
+    width: 882px;
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+
+    img {
+      position: absolute;
+      width: 100%;
+      top: -340px;
+      filter: grayscale(100%);
+    }
+  }
+
+  &__vector-arrows-2 {
+    position: absolute;
+    bottom: -220px;
+    left: 260px;
+  }
+
+  &__description {
+    max-width: 675px;
+    margin-bottom: 63px;
+    @include typography.desktop-sb1-24-m;
+  }
+
+  .smart-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+    max-width: 545px;
+
+    .form-field {
+      flex: 1;
+    }
+
+    &__submit {
+      padding: 12px 28px;
+      background-color: colors.$color-txt;
+      border-radius: 10px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+
+      img {
+        margin-bottom: -2px;
+      }
+
+      &:hover {
+        background-color: rgba(colors.$color-txt, 0.8);
+      }
+    }
+  }
 }
