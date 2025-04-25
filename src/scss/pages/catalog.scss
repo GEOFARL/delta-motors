@@ -1,4 +1,7 @@
 @use "../base/reset";
+@use "../components//ui/select";
+@use "../components//ui/dropdown";
+@use "../components//ui/card";
 @use "../components/header";
 @use "../components/footer";
 @use "../base/colors";
@@ -90,5 +93,110 @@
 }
 
 .catalog {
-  padding: 200px 0;
+  padding: 0 0 200px;
+
+  &__container {
+    position: relative;
+    @include layout.max-width;
+  }
+
+  &__vertical-line {
+    position: absolute;
+    top: -180px;
+    right: -110px;
+  }
+
+  &__navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__body {
+    margin-top: 80px;
+    display: flex;
+    gap: 60px;
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: colors.$color-txt;
+    text-decoration: none;
+    @include typography.desktop-sb1-24-sb;
+
+    &.active {
+      color: colors.$color-accent-2;
+
+      p {
+        text-decoration: underline;
+      }
+
+      svg {
+        path {
+          fill: colors.$color-accent-2;
+        }
+      }
+    }
+  }
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+
+  .car-card {
+    max-width: 420px;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pagination__prev,
+.pagination__next {
+  background: colors.$color-white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(180deg);
+}
+
+.pagination__next {
+  transform: rotate(0deg);
+}
+
+.pagination__pages {
+  display: flex;
+  gap: 8px;
+}
+
+.pagination__pages button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pagination__pages button.active {
+  background: colors.$color-accent-2;
+  color: colors.$color-white;
 }

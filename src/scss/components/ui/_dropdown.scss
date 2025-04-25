@@ -1,0 +1,131 @@
+@use "../../base/colors";
+@use "../../base/typography";
+
+.custom-dropdown {
+  background: colors.$color-white;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 450px;
+  margin-bottom: 20px;
+}
+
+.custom-dropdown__header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+  @include typography.desktop-bt2-16-sb;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #111017;
+    border-bottom: 2px solid #111017;
+    transform: translateY(calc(-50% - 3px)) rotate(45deg);
+    pointer-events: none;
+  }
+}
+
+.custom-dropdown__icon {
+  transition: transform 0.3s ease;
+}
+
+.custom-dropdown.open .custom-dropdown__header::after {
+  transform: rotate(224deg);
+}
+
+.custom-dropdown__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: colors.$color-white;
+}
+
+.custom-dropdown.open .custom-dropdown__content {
+  max-height: 300px;
+}
+
+.custom-dropdown__input {
+  padding: 12px 16px;
+
+  &.range {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+.custom-dropdown__input input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid colors.$color-light-grey;
+  border-radius: 8px;
+  @include typography.button;
+  font-size: 14px;
+}
+
+.custom-dropdown__list {
+  list-style: none;
+  padding: 0 16px 16px 16px;
+  margin: 0;
+}
+
+.custom-dropdown__list li {
+  padding: 8px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.custom-dropdown__list li:hover {
+  color: colors.$color-blue-light;
+}
+
+.custom-dropdown__checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 16px;
+}
+
+.custom-dropdown__checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.custom-dropdown__checkboxes input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.custom-dropdown__button {
+  display: flex;
+  align-items: center;
+
+  appearance: none;
+  border: none;
+  padding: 11px 72px;
+
+  border-radius: 12px;
+  gap: 10px;
+
+  margin-top: 32px;
+
+  color: colors.$color-white;
+  @include typography.desktop-bt2-16-r;
+
+  background-color: colors.$color-accent-2;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(colors.$color-accent-2, 0.8);
+  }
+}

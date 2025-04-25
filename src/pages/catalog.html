@@ -34,6 +34,426 @@
     </section>
 
     <section class="catalog">
+      <div class="catalog__container">
+        <div class="catalog__navbar">
+          <div class="catalog__tabs">
+            <a href="/catalog.html#available" class="catalog__tab active">
+              <p>В наявності</p>
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26.4492 11.2491L13.6492 24.0491C13.5377 24.1609 13.4052 24.2497 13.2593 24.3103C13.1135 24.3708 12.9571 24.402 12.7992 24.402C12.6412 24.402 12.4848 24.3708 12.339 24.3103C12.1931 24.2497 12.0606 24.1609 11.9492 24.0491L6.34915 18.4491C6.23753 18.3374 6.14898 18.2049 6.08857 18.0591C6.02816 17.9132 5.99707 17.7569 5.99707 17.5991C5.99707 17.4412 6.02816 17.2849 6.08857 17.139C6.14898 16.9932 6.23753 16.8607 6.34915 16.7491C6.46078 16.6374 6.59329 16.5489 6.73913 16.4885C6.88498 16.4281 7.04129 16.397 7.19915 16.397C7.35701 16.397 7.51333 16.4281 7.65917 16.4885C7.80501 16.5489 7.93753 16.6374 8.04915 16.7491L12.8002 21.5001L24.7512 9.55106C24.9766 9.32562 25.2823 9.19897 25.6011 9.19897C25.92 9.19897 26.2257 9.32562 26.4511 9.55106C26.6766 9.77649 26.8032 10.0822 26.8032 10.4011C26.8032 10.7199 26.6766 11.0256 26.4511 11.2511L26.4492 11.2491Z" fill="#111017"/>
+              </svg>
+            </a>
+            <a class="catalog__tab" href="/catalog.html#auction">
+              <p>На аукціоні</p>
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.9998 18.6746L7.79182 28.3106C7.53078 28.6145 7.2098 28.8611 6.849 29.0351C6.4882 29.2092 6.09535 29.3068 5.69506 29.3219C5.29477 29.3371 4.89567 29.2694 4.52276 29.1231C4.14984 28.9768 3.81115 28.7551 3.52791 28.4719C3.24466 28.1886 3.02295 27.8499 2.87668 27.477C2.73041 27.1041 2.66272 26.705 2.67786 26.3047C2.693 25.9044 2.79063 25.5116 2.96465 25.1508C3.13867 24.79 3.38532 24.469 3.68916 24.208L13.3252 16M29.3332 15.8733L21.2065 24M16.1265 2.66663L7.99982 10.7933M15.1105 3.68263L9.01582 9.77729C9.01582 9.77729 12.0638 13.8413 15.1105 16.8893C18.1585 19.936 22.2225 22.984 22.2225 22.984L28.3172 16.8893C28.3172 16.8893 25.2692 12.8253 22.2225 9.77729C19.1745 6.73063 15.1105 3.68263 15.1105 3.68263Z" stroke="#111017" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="custom-select">
+            <select>
+              <option value="asc">Ціна по зростанню</option>
+              <option value="desc">Ціна по спаданню</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="catalog__body">
+          <div class="catalog__filters">
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Марка</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__input">
+                  <input type="text" placeholder="Пошук..." />
+                </div>
+                <ul class="custom-dropdown__list">
+                  <li>Acura</li>
+                  <li>Alfa Romeo</li>
+                  <li>Audi</li>
+                  <li>Bentley</li>
+                  <li>BMW</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Ціна</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__input range">
+                  <input type="number" placeholder="Min" />
+                  <input type="number" placeholder="Max" />
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Рік</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__input range">
+                  <input type="number" placeholder="Min" />
+                  <input type="number" placeholder="Max" />
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Пробіг</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__input range">
+                  <input type="number" placeholder="Min" />
+                  <input type="number" placeholder="Max" />
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Коробка передач</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__checkboxes">
+                  <label><input type="checkbox" /> Автомат</label>
+                  <label><input type="checkbox" /> Механіка</label>
+                  <label><input type="checkbox" /> Задній</label>
+                  <label><input type="checkbox" /> Інша</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Привід</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__checkboxes">
+                  <label><input type="checkbox" /> Передній</label>
+                  <label><input type="checkbox" /> Задній</label>
+                  <label><input type="checkbox" /> Повний</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Тип кузова</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__checkboxes">
+                  <label><input type="checkbox" /> Седан</label>
+                  <label><input type="checkbox" /> Кросовер</label>
+                  <label><input type="checkbox" /> Хетчбек</label>
+                  <label><input type="checkbox" /> Мінівен</label>
+                  <label><input type="checkbox" /> Універсал</label>
+                  <label><input type="checkbox" /> Лікап</label>
+                  <label><input type="checkbox" /> Купе</label>
+                  <label><input type="checkbox" /> Мікроавтобус</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Паливо</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__checkboxes">
+                  <label><input type="checkbox" /> Бензин</label>
+                  <label><input type="checkbox" /> Дизель</label>
+                  <label><input type="checkbox" /> Газ</label>
+                  <label><input type="checkbox" /> Гібрид</label>
+                  <label><input type="checkbox" /> Електро</label>
+                  <label><input type="checkbox" /> Інше</label>
+                </div>
+              </div>
+            </div>
+
+            <button class="custom-dropdown__button"><img src="assets/icons/component-icons/search.svg" alt="search" />Пошук</button>
+          </div>
+          <div class="catalog__content">
+            <img src="assets/icons/line-vectors/vertical-line-4.svg" alt="vertical line" class="catalog__vertical-line" />
+            <div class="car-grid">
+              <article class="car-card">
+                <div class="car-card__image">
+                  <img src="assets/images/audi.png" alt="Audi A6" />
+                </div>
+                <div class="car-card__details">
+                  <h3 class="car-card__title">AUDI A6 50 TDI HYBRID 2019</h3>
+                  <p class="car-card__description">CB 50 TDI (286 к.с) Quattro</p>
+                  <div class="car-card__block">
+                    <div class="car-card__price">32 500 $</div>
+                    <ul class="car-card__info">
+                      <li><img src="assets/icons/component-icons/speed.svg" alt="" />25 тис.км</li>
+                      <li><img src="assets/icons/component-icons/motor.svg" alt="" />3.0/дизель</li>
+                      <li><img src="assets/icons/component-icons/gearbox.svg" alt="" />Автомат</li>
+                    </ul>
+                  </div>
+                  <a href="/car-details.html" class="car-card__view">
+                    <img src="assets/icons/arrows/arrow-top-right.svg" alt="view" />
+                  </a>
+                </div>
+              </article>
+
+              <article class="car-card">
+                <div class="car-card__image">
+                  <img src="assets/images/audi.png" alt="Audi A6" />
+                </div>
+                <div class="car-card__details">
+                  <h3 class="car-card__title">AUDI A6 50 TDI HYBRID 2019</h3>
+                  <p class="car-card__description">CB 50 TDI (286 к.с) Quattro</p>
+                  <div class="car-card__block">
+                    <div class="car-card__price">32 500 $</div>
+                    <ul class="car-card__info">
+                      <li><img src="assets/icons/component-icons/speed.svg" alt="" />25 тис.км</li>
+                      <li><img src="assets/icons/component-icons/motor.svg" alt="" />3.0/дизель</li>
+                      <li><img src="assets/icons/component-icons/gearbox.svg" alt="" />Автомат</li>
+                    </ul>
+                  </div>
+                  <a href="/car-details.html" class="car-card__view">
+                    <img src="assets/icons/arrows/arrow-top-right.svg" alt="view" />
+                  </a>
+                </div>
+              </article>
+
+              <article class="car-card">
+                <div class="car-card__image">
+                  <img src="assets/images/audi.png" alt="Audi A6" />
+                </div>
+                <div class="car-card__details">
+                  <h3 class="car-card__title">AUDI A6 50 TDI HYBRID 2019</h3>
+                  <p class="car-card__description">CB 50 TDI (286 к.с) Quattro</p>
+                  <div class="car-card__block">
+                    <div class="car-card__price">32 500 $</div>
+                    <ul class="car-card__info">
+                      <li><img src="assets/icons/component-icons/speed.svg" alt="" />25 тис.км</li>
+                      <li><img src="assets/icons/component-icons/motor.svg" alt="" />3.0/дизель</li>
+                      <li><img src="assets/icons/component-icons/gearbox.svg" alt="" />Автомат</li>
+                    </ul>
+                  </div>
+                  <a href="/car-details.html" class="car-card__view">
+                    <img src="assets/icons/arrows/arrow-top-right.svg" alt="view" />
+                  </a>
+                </div>
+              </article>
+
+              <article class="car-card">
+                <div class="car-card__image">
+                  <img src="assets/images/audi.png" alt="Audi A6" />
+                </div>
+                <div class="car-card__details">
+                  <h3 class="car-card__title">AUDI A6 50 TDI HYBRID 2019</h3>
+                  <p class="car-card__description">CB 50 TDI (286 к.с) Quattro</p>
+                  <div class="car-card__block">
+                    <div class="car-card__price">32 500 $</div>
+                    <ul class="car-card__info">
+                      <li><img src="assets/icons/component-icons/speed.svg" alt="" />25 тис.км</li>
+                      <li><img src="assets/icons/component-icons/motor.svg" alt="" />3.0/дизель</li>
+                      <li><img src="assets/icons/component-icons/gearbox.svg" alt="" />Автомат</li>
+                    </ul>
+                  </div>
+                  <a href="/car-details.html" class="car-card__view">
+                    <img src="assets/icons/arrows/arrow-top-right.svg" alt="view" />
+                  </a>
+                </div>
+              </article>
+
+              <article class="car-card">
+                <div class="car-card__image">
+                  <img src="assets/images/audi.png" alt="Audi A6" />
+                </div>
+                <div class="car-card__details">
+                  <h3 class="car-card__title">AUDI A6 50 TDI HYBRID 2019</h3>
+                  <p class="car-card__description">CB 50 TDI (286 к.с) Quattro</p>
+                  <div class="car-card__block">
+                    <div class="car-card__price">32 500 $</div>
+                    <ul class="car-card__info">
+                      <li><img src="assets/icons/component-icons/speed.svg" alt="" />25 тис.км</li>
+                      <li><img src="assets/icons/component-icons/motor.svg" alt="" />3.0/дизель</li>
+                      <li><img src="assets/icons/component-icons/gearbox.svg" alt="" />Автомат</li>
+                    </ul>
+                  </div>
+                  <a href="/car-details.html" class="car-card__view">
+                    <img src="assets/icons/arrows/arrow-top-right.svg" alt="view" />
+                  </a>
+                </div>
+              </article>
+
+              <article class="car-card">
+                <div class="car-card__image">
+                  <img src="assets/images/audi.png" alt="Audi A6" />
+                </div>
+                <div class="car-card__details">
+                  <h3 class="car-card__title">AUDI A6 50 TDI HYBRID 2019</h3>
+                  <p class="car-card__description">CB 50 TDI (286 к.с) Quattro</p>
+                  <div class="car-card__block">
+                    <div class="car-card__price">32 500 $</div>
+                    <ul class="car-card__info">
+                      <li><img src="assets/icons/component-icons/speed.svg" alt="" />25 тис.км</li>
+                      <li><img src="assets/icons/component-icons/motor.svg" alt="" />3.0/дизель</li>
+                      <li><img src="assets/icons/component-icons/gearbox.svg" alt="" />Автомат</li>
+                    </ul>
+                  </div>
+                  <a href="/car-details.html" class="car-card__view">
+                    <img src="assets/icons/arrows/arrow-top-right.svg" alt="view" />
+                  </a>
+                </div>
+              </article>
+              <article class="car-card">
+                <div class="car-card__image">
+                  <img src="assets/images/audi.png" alt="Audi A6" />
+                </div>
+                <div class="car-card__details">
+                  <h3 class="car-card__title">AUDI A6 50 TDI HYBRID 2019</h3>
+                  <p class="car-card__description">CB 50 TDI (286 к.с) Quattro</p>
+                  <div class="car-card__block">
+                    <div class="car-card__price">32 500 $</div>
+                    <ul class="car-card__info">
+                      <li><img src="assets/icons/component-icons/speed.svg" alt="" />25 тис.км</li>
+                      <li><img src="assets/icons/component-icons/motor.svg" alt="" />3.0/дизель</li>
+                      <li><img src="assets/icons/component-icons/gearbox.svg" alt="" />Автомат</li>
+                    </ul>
+                  </div>
+                  <a href="/car-details.html" class="car-card__view">
+                    <img src="assets/icons/arrows/arrow-top-right.svg" alt="view" />
+                  </a>
+                </div>
+              </article>
+
+              <article class="car-card">
+                <div class="car-card__image">
+                  <img src="assets/images/audi.png" alt="Audi A6" />
+                </div>
+                <div class="car-card__details">
+                  <h3 class="car-card__title">AUDI A6 50 TDI HYBRID 2019</h3>
+                  <p class="car-card__description">CB 50 TDI (286 к.с) Quattro</p>
+                  <div class="car-card__block">
+                    <div class="car-card__price">32 500 $</div>
+                    <ul class="car-card__info">
+                      <li><img src="assets/icons/component-icons/speed.svg" alt="" />25 тис.км</li>
+                      <li><img src="assets/icons/component-icons/motor.svg" alt="" />3.0/дизель</li>
+                      <li><img src="assets/icons/component-icons/gearbox.svg" alt="" />Автомат</li>
+                    </ul>
+                  </div>
+                  <a href="/car-details.html" class="car-card__view">
+                    <img src="assets/icons/arrows/arrow-top-right.svg" alt="view" />
+                  </a>
+                </div>
+              </article>
+
+              <article class="car-card">
+                <div class="car-card__image">
+                  <img src="assets/images/audi.png" alt="Audi A6" />
+                </div>
+                <div class="car-card__details">
+                  <h3 class="car-card__title">AUDI A6 50 TDI HYBRID 2019</h3>
+                  <p class="car-card__description">CB 50 TDI (286 к.с) Quattro</p>
+                  <div class="car-card__block">
+                    <div class="car-card__price">32 500 $</div>
+                    <ul class="car-card__info">
+                      <li><img src="assets/icons/component-icons/speed.svg" alt="" />25 тис.км</li>
+                      <li><img src="assets/icons/component-icons/motor.svg" alt="" />3.0/дизель</li>
+                      <li><img src="assets/icons/component-icons/gearbox.svg" alt="" />Автомат</li>
+                    </ul>
+                  </div>
+                  <a href="/car-details.html" class="car-card__view">
+                    <img src="assets/icons/arrows/arrow-top-right.svg" alt="view" />
+                  </a>
+                </div>
+              </article>
+
+              <article class="car-card">
+                <div class="car-card__image">
+                  <img src="assets/images/audi.png" alt="Audi A6" />
+                </div>
+                <div class="car-card__details">
+                  <h3 class="car-card__title">AUDI A6 50 TDI HYBRID 2019</h3>
+                  <p class="car-card__description">CB 50 TDI (286 к.с) Quattro</p>
+                  <div class="car-card__block">
+                    <div class="car-card__price">32 500 $</div>
+                    <ul class="car-card__info">
+                      <li><img src="assets/icons/component-icons/speed.svg" alt="" />25 тис.км</li>
+                      <li><img src="assets/icons/component-icons/motor.svg" alt="" />3.0/дизель</li>
+                      <li><img src="assets/icons/component-icons/gearbox.svg" alt="" />Автомат</li>
+                    </ul>
+                  </div>
+                  <a href="/car-details.html" class="car-card__view">
+                    <img src="assets/icons/arrows/arrow-top-right.svg" alt="view" />
+                  </a>
+                </div>
+              </article>
+
+              <article class="car-card">
+                <div class="car-card__image">
+                  <img src="assets/images/audi.png" alt="Audi A6" />
+                </div>
+                <div class="car-card__details">
+                  <h3 class="car-card__title">AUDI A6 50 TDI HYBRID 2019</h3>
+                  <p class="car-card__description">CB 50 TDI (286 к.с) Quattro</p>
+                  <div class="car-card__block">
+                    <div class="car-card__price">32 500 $</div>
+                    <ul class="car-card__info">
+                      <li><img src="assets/icons/component-icons/speed.svg" alt="" />25 тис.км</li>
+                      <li><img src="assets/icons/component-icons/motor.svg" alt="" />3.0/дизель</li>
+                      <li><img src="assets/icons/component-icons/gearbox.svg" alt="" />Автомат</li>
+                    </ul>
+                  </div>
+                  <a href="/car-details.html" class="car-card__view">
+                    <img src="assets/icons/arrows/arrow-top-right.svg" alt="view" />
+                  </a>
+                </div>
+              </article>
+
+              <article class="car-card">
+                <div class="car-card__image">
+                  <img src="assets/images/audi.png" alt="Audi A6" />
+                </div>
+                <div class="car-card__details">
+                  <h3 class="car-card__title">AUDI A6 50 TDI HYBRID 2019</h3>
+                  <p class="car-card__description">CB 50 TDI (286 к.с) Quattro</p>
+                  <div class="car-card__block">
+                    <div class="car-card__price">32 500 $</div>
+                    <ul class="car-card__info">
+                      <li><img src="assets/icons/component-icons/speed.svg" alt="" />25 тис.км</li>
+                      <li><img src="assets/icons/component-icons/motor.svg" alt="" />3.0/дизель</li>
+                      <li><img src="assets/icons/component-icons/gearbox.svg" alt="" />Автомат</li>
+                    </ul>
+                  </div>
+                  <a href="/car-details.html" class="car-card__view">
+                    <img src="assets/icons/arrows/arrow-top-right.svg" alt="view" />
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="pagination">
+              <button class="pagination__prev">
+                <img src="assets/icons/arrows/right-arrow-black.svg" alt="left arrow" />
+              </button>
+              <div class="pagination__pages">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+              </div>
+              <button class="pagination__next">
+                <img src="assets/icons/arrows/right-arrow-black.svg" alt="right arrow" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 

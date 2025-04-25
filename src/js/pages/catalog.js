@@ -1,21 +1,29 @@
 import $ from "jquery";
+import { initDropdown } from "../components/dropdown";
 
 $(function () {
   console.log("Catalog page initialized");
+  updateCatalogPage();
+  initDropdown();
+  $(window).on("hashchange", updateCatalogPage);
+});
 
-  function updateBreadcrumb() {
-    const hash = window.location.hash;
-    const $status = $("#breadcrumb-status");
+function updateCatalogPage() {
+  const hash = window.location.hash;
 
-    if (hash === "#available") {
-      $status.text("В наявності");
-    } else if (hash === "#auction") {
-      $status.text("На аукціоні");
-    } else {
-      $status.text("");
-    }
+  const $breadcrumbStatus = $("#breadcrumb-status");
+  if (hash === "#available") {
+    $breadcrumbStatus.text("В наявності");
+  } else if (hash === "#auction") {
+    $breadcrumbStatus.text("На аукціоні");
   }
 
-  updateBreadcrumb();
-  $(window).on("hashchange", updateBreadcrumb);
-});
+  const $tabs = $(".catalog__tab");
+  $tabs.removeClass("active");
+
+  if (hash === "#available") {
+    $tabs.eq(0).addClass("active");
+  } else if (hash === "#auction") {
+    $tabs.eq(1).addClass("active");
+  }
+}
