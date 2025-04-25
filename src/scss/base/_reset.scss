@@ -10,11 +10,16 @@
 body {
   background-color: colors.$color-bg-light;
   font-family: "Wix Madefor Display", sans-serif;
-  overflow-x: hidden;
 
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: auto;
   text-rendering: optimizeSpeed;
+}
+
+main {
+  overflow-x: hidden;
+  margin-top: -90px;
+  padding-top: 90px;
 }
 
 .swiper {
