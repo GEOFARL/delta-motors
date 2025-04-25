@@ -62,9 +62,9 @@
   }
 
   &__container {
+    gap: 83px !important;
+    display: flex !important;
     @include layout.max-width;
-    display: flex;
-    gap: 83px;
   }
 
   &__title {
