@@ -31,7 +31,13 @@ function scssTask() {
 }
 
 async function jsTask() {
-  const entryPoints = ["index", "about", "car-details", "car-tracking"];
+  const entryPoints = [
+    "index",
+    "about",
+    "car-details",
+    "car-tracking",
+    "catalog",
+  ];
 
   for (const name of entryPoints) {
     const bundle = await rollup({

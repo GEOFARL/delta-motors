@@ -1,0 +1,94 @@
+@use "../base/reset";
+@use "../components/header";
+@use "../components/footer";
+@use "../base/colors";
+@use "../base/layout";
+@use "../base/typography";
+
+.hero {
+  position: relative;
+  top: -90px;
+  height: 395px;
+  background-color: colors.$color-accent-dark;
+  z-index: 1;
+
+  .bottom-block {
+    height: 32px;
+    width: 50%;
+    background-color: colors.$color-accent-dark;
+
+    position: absolute;
+    bottom: -32px;
+    left: 0;
+    .rectangle {
+      position: absolute;
+      top: -317px;
+      right: -960px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    img {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__title {
+    color: colors.$color-white;
+    @include typography.desktop-h1-h-1;
+  }
+
+  &__vector-arrows {
+    position: absolute;
+    bottom: -130px;
+    left: 1030px;
+  }
+
+  &-content {
+    z-index: 5;
+    padding-top: 200px;
+    position: relative;
+    @include layout.max-width;
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+
+  &__protectors-1 {
+    transform: scale(0.4) rotate(120deg);
+    position: absolute;
+    top: -450px;
+    left: -450px;
+  }
+
+  &__protectors-2 {
+    transform: scale(0.4) rotate(120deg);
+    position: absolute;
+    top: -440px;
+    right: -570px;
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: colors.$color-white;
+    @include typography.button;
+
+    .active {
+      color: colors.$color-blue-light;
+    }
+  }
+}
+
+.catalog {
+  padding: 200px 0;
+}

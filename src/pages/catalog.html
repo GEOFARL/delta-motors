@@ -1,0 +1,43 @@
+@@include('../partials/_head.html', {
+  "title": "Delta Motors | Catalog",
+  "cssFile": "catalog.min.css"
+})
+
+<body>
+  @@include('../partials/_header.html')
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-content-container">
+
+          <div class="hero__breadcrumbs">
+            <p>Головна</p>
+            <img src="assets/icons/component-icons/chevron-right.svg" alt="chevron right" />
+            <p>Каталог</p>
+            <img src="assets/icons/component-icons/chevron-right.svg" alt="chevron right" />
+            <p id="breadcrumb-status" class="active">В наявності</p>
+          </div>
+
+          <div class="hero__text">
+            <h1 class="hero__title">КАТАЛОГ</h1>
+            <img src="assets/icons/graphic-elements/vector-arrows-2.svg" alt="vector arrows" />
+          </div>
+        </div>
+        <img class="hero__protectors-1" src="assets/images/protectors.png" alt="protectors" />
+        <img class="hero__protectors-2" src="assets/images/protectors.png" alt="protectors" />
+        <img class="hero__vector-arrows" src="assets/icons/graphic-elements/vector-arrows.svg" alt="vector arrows" />
+      </div>
+      <div class="bottom-block">
+        <img class="rectangle" src="assets/icons/layout/rectangle-9.svg" />
+      </div>
+    </section>
+
+    <section class="catalog">
+    </section>
+  </main>
+
+  @@include('../partials/_footer.html')
+  @@include('../partials/_scripts.html', { "jsFile": "catalog.js" })
+</body>
+</html>
