@@ -1,5 +1,6 @@
 @use "../base/layout";
 @use "../base/colors";
+@use "../base/breakpoints" as *;
 @use "../base/typography";
 @use "./stats";
 
@@ -28,21 +29,20 @@
     align-items: flex-start;
     z-index: 2;
     padding-left: 100px !important;
-
     @include layout.max-width;
 
     .hero-title {
-      @include typography.desktop-h1-140;
       color: #f8f7fc;
       margin-bottom: 7px;
       z-index: 3;
+      @include typography.desktop-h1-140;
     }
 
     .hero-subtitle {
       color: colors.$color-light-grey;
-      @include typography.header-subtitle;
       margin-bottom: 56px;
       z-index: 3;
+      @include typography.header-subtitle;
     }
 
     .hero-speed-arrow {
@@ -56,6 +56,15 @@
       &--2 {
         top: -60px;
         right: -530px;
+      }
+
+      @include respond-to-max(2xl) {
+        transform: scale(0.8);
+
+        &--2 {
+          top: -100px;
+          right: -430px;
+        }
       }
     }
   }
@@ -73,6 +82,13 @@
       height: 101%;
       transform: translateX(calc(-100% + 4px));
     }
+
+    @include respond-to-max(2xl) {
+      img {
+        height: 70%;
+      }
+      bottom: -28px;
+    }
   }
 
   .car-models {
@@ -82,13 +98,21 @@
     z-index: 3;
 
     display: flex;
-
     & img:nth-child(2n) {
       margin-left: 12px;
     }
 
     & img:nth-child(2n + 1) {
       margin-left: -38px;
+    }
+
+    @include respond-to-max(2xl) {
+      transform: scale(0.8);
+      left: calc(50% - 170px);
+
+      & > :nth-last-child(-n + 2) {
+        display: none;
+      }
     }
   }
 }

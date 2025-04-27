@@ -12,8 +12,8 @@
   color: colors.$color-white;
   text-decoration: none;
   background-color: colors.$color-accent-2;
-  @include typography.button;
   transition: all 0.1s ease-in-out;
+  @include typography.button;
 
   .cta-button-icon {
     width: 44px;

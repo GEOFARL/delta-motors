@@ -1,3 +1,5 @@
+@use "./breakpoints" as *;
+
 @mixin text-style(
   $family,
   $weight,
@@ -27,6 +29,10 @@
 
 @mixin desktop-h1-140 {
   @include text-style("Arimo", 700, 140px, 130%, -1px, italic, right);
+
+  @include respond-to-max(2xl) {
+    font-size: 120px;
+  }
 }
 
 @mixin desktop-h1-h-1 {
@@ -35,34 +41,66 @@
 
 @mixin desktop-h2-54-b {
   @include text-style("Arimo", 700, 54px, 130%, 0, normal, null, uppercase);
+
+  @include respond-to-max(2xl) {
+    font-size: 48px;
+  }
 }
 
 @mixin desktop-h2-54-r {
   @include text-style("Arimo", 400, 54px, 120%, 0, normal, null, uppercase);
+
+  @include respond-to-max(2xl) {
+    font-size: 48px;
+  }
 }
 
 @mixin desktop-sb1-24-sb {
   @include text-style("Arimo", 700, 24px, 140%, 0, normal, null, uppercase);
+
+  @include respond-to-max(2xl) {
+    font-size: 20px;
+  }
 }
 
 @mixin desktop-sb1-24-wix {
   @include text-style("Wix Madefor Display", 400, 24px, 130%, 0);
+
+  @include respond-to-max(2xl) {
+    font-size: 20px;
+  }
 }
 
 @mixin desktop-sb1-24-m {
   @include text-style("Wix Madefor Display", 500, 24px, 130%, 0);
+
+  @include respond-to-max(2xl) {
+    font-size: 20px;
+  }
 }
 
 @mixin desktop-sb1-24-sb-wix {
   @include text-style("Wix Madefor Display", 600, 24px, 130%, 0);
+
+  @include respond-to-max(2xl) {
+    font-size: 20px;
+  }
 }
 
 @mixin desktop-sb2-28-b {
   @include text-style("Arimo", 700, 28px, 130%, 0, normal, null, uppercase);
+
+  @include respond-to-max(2xl) {
+    font-size: 24px;
+  }
 }
 
 @mixin desktop-bt1-18-r {
   @include text-style("Wix Madefor Display", 400, 18px, 150%, 0);
+
+  @include respond-to-max(2xl) {
+    font-size: 16px;
+  }
 }
 
 @mixin desktop-bt1-18-sb {
@@ -87,10 +125,18 @@
 
 @mixin button {
   @include text-style("Wix Madefor Display", 500, 18px, 140%, 0);
+
+  @include respond-to-max(2xl) {
+    font-size: 16px;
+  }
 }
 
 @mixin header-subtitle {
   @include text-style("Wix Madefor Display", 600, 32px, 130%, 0);
+
+  @include respond-to-max(2xl) {
+    font-size: 24px;
+  }
 }
 
 @mixin service-numbers {
@@ -99,6 +145,10 @@
 
 @mixin auction-subtitle {
   @include text-style("Wix Madefor Display", 400, 20px, 130%, 0);
+
+  @include respond-to-max(2xl) {
+    font-size: 18px;
+  }
 }
 
 @mixin number-value {
