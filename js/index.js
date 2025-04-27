@@ -20651,9 +20651,26 @@
 	  });
 	}
 
+	const initModal = ({ openModalSelector }) => {
+	  $(openModalSelector).on("click", function () {
+	    $(".modal-overlay").addClass("active");
+	  });
+
+	  $(".modal__close, .modal-overlay").on("click", function (e) {
+	    $(".modal-overlay").removeClass("active");
+	  });
+
+	  $(".modal").on("click", function (e) {
+	    e.stopPropagation();
+	  });
+	};
+
 	$(function () {
 	  initContact();
 	  initSmartForm();
+	  initModal({
+	    openModalSelector: "#open-contact-modal",
+	  });
 
 	  initAccordion({
 	    itemSelector: ".faq-item",
