@@ -4,10 +4,14 @@ import { initAccordion } from "../components/accordion";
 import "../components/cardSwiper";
 import "../components/serviceItem";
 import { initSmartForm } from "../components/form";
+import { initModal } from "../components/modal";
 
 $(function () {
   initContact();
   initSmartForm();
+  initModal({
+    openModalSelector: "#open-contact-modal",
+  });
 
   initAccordion({
     itemSelector: ".faq-item",

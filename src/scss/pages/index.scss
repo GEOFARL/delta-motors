@@ -4,6 +4,7 @@
 @use "../components/hero";
 @use "../components/ui/card";
 @use "../components/ui/form";
+@use "../components/ui/modal";
 @use "../components/testimonials";
 @use "../base/colors";
 @use "../base/layout";
@@ -725,5 +726,12 @@
     top: -300px;
     right: 110px;
     z-index: 0;
+  }
+}
+
+.contact-us-modal-content {
+  &__title {
+    @include typography.desktop-sb2-28-b;
+    max-width: 500px;
   }
 }
