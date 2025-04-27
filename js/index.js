@@ -20547,7 +20547,12 @@
 	Swiper.use(modules);
 
 	$(document).ready(function () {
-	  const initSwiper = (selector, spaceBetween = 40, slidesPerView = 3) => {
+	  const initSwiper = (
+	    selector,
+	    spaceBetween = 40,
+	    slidesPerView = 3,
+	    breakpoints
+	  ) => {
 	    new Swiper(selector, {
 	      slidesPerView,
 	      spaceBetween: spaceBetween,
@@ -20556,14 +20561,36 @@
 	        prevEl: ".swiper-button-prev",
 	      },
 	      loop: false,
+	      breakpoints: {
+	        1536: {
+	          slidesPerView: slidesPerView,
+	          spaceBetween: spaceBetween,
+	        },
+	        ...breakpoints,
+	      },
 	    });
 	  };
 
-	  initSwiper(".available-cars-swiper");
-	  initSwiper(".auction-cars-swiper");
+	  initSwiper(".available-cars-swiper", 40, 3, {
+	    1024: {
+	      slidesPerView: 2,
+	      spaceBetween: 40,
+	    },
+	  });
+	  initSwiper(".auction-cars-swiper", 40, 3, {
+	    1024: {
+	      slidesPerView: 2,
+	      spaceBetween: 40,
+	    },
+	  });
 	  initSwiper(".cars-for-u-swiper", 20);
 	  initSwiper(".main-image-swiper", 40, 1);
-	  initSwiper(".testimonials-swiper", 28);
+	  initSwiper(".testimonials-swiper", 28, 3, {
+	    1024: {
+	      slidesPerView: 2,
+	      spaceBetween: 40,
+	    },
+	  });
 	});
 
 	$(document).ready(function () {
