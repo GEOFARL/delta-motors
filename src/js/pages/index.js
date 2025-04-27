@@ -5,6 +5,7 @@ import "../components/cardSwiper";
 import "../components/serviceItem";
 import { initSmartForm } from "../components/form";
 import { initModal } from "../components/modal";
+import { initCookieConsent } from "../components/cookieConsent";
 
 $(function () {
   initContact();
@@ -12,6 +13,7 @@ $(function () {
   initModal({
     openModalSelector: "#open-contact-modal",
   });
+  initCookieConsent();
 
   initAccordion({
     itemSelector: ".faq-item",

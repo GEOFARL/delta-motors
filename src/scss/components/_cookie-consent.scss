@@ -1,0 +1,65 @@
+@use "../base/colors";
+@use "../base/typography";
+
+.cookie-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.cookie-consent {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: colors.$color-bg-light;
+  padding: 24px 75px 24px 24px;
+  border-radius: 12px;
+  display: none;
+  align-items: center;
+  gap: 16px;
+  max-width: 746px;
+  z-index: 999;
+  @include typography.desktop-bt2-16-r;
+}
+
+.cookie-consent.show {
+  display: flex;
+}
+
+.cookie-overlay.show {
+  display: block;
+}
+
+.cookie-consent a {
+  color: colors.$color-accent-2;
+  text-decoration: underline;
+}
+
+.cookie-consent__accept {
+  background: colors.$color-accent-2;
+  color: colors.$color-white;
+  border: none;
+  padding: 11.5px 62.5px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  @include typography.button;
+
+  &:hover {
+    background-color: rgba(colors.$color-accent-2, 0.8);
+  }
+}
+
+.cookie-consent__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
