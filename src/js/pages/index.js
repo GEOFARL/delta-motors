@@ -6,6 +6,7 @@ import "../components/serviceItem";
 import { initSmartForm } from "../components/form";
 import { initModal } from "../components/modal";
 import { initCookieConsent } from "../components/cookieConsent";
+import { initMobileMenu } from "../components/mobileMenu";
 
 $(function () {
   initContact();
@@ -14,6 +15,7 @@ $(function () {
     openModalSelector: "#open-contact-modal",
   });
   initCookieConsent();
+  initMobileMenu();
 
   initAccordion({
     itemSelector: ".faq-item",
