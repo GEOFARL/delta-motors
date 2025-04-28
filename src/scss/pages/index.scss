@@ -850,7 +850,8 @@
     z-index: 2;
     @include respond-to-max(md) {
       bottom: -90px;
-      right: 400px;
+      right: unset;
+      left: -15%;
     }
   }
 
@@ -972,6 +973,10 @@
     gap: 22px;
     position: relative;
     z-index: 1;
+
+    @include respond-to-max(lg) {
+      width: 100%;
+    }
   }
 
   .faq-item {
@@ -983,6 +988,10 @@
     gap: 16px;
     transition: all 0.3s ease;
     width: 945px;
+
+    @include respond-to-max(lg) {
+      width: 100%;
+    }
 
     &__header {
       display: flex;
@@ -1059,6 +1068,10 @@
     top: -210px;
     left: -20px;
     z-index: 0;
+
+    @include respond-to-max(md) {
+      display: none;
+    }
   }
 
   &__line {
@@ -1066,6 +1079,10 @@
     top: -300px;
     right: 110px;
     z-index: 0;
+
+    @include respond-to-max(lg) {
+      display: none;
+    }
   }
 }
 
