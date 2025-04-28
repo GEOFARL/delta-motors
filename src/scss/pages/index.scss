@@ -848,6 +848,10 @@
     left: unset;
     top: unset;
     z-index: 2;
+    @include respond-to-max(md) {
+      bottom: -90px;
+      right: 400px;
+    }
   }
 
   &__rectangle {
