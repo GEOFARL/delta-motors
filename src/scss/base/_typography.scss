@@ -76,6 +76,10 @@
   @include respond-to-max(2xl) {
     font-size: 20px;
   }
+
+  @include respond-to-max(md) {
+    font-size: 18px;
+  }
 }
 
 @mixin desktop-sb1-24-wix {
@@ -95,6 +99,10 @@
 
   @include respond-to-max(2xl) {
     font-size: 20px;
+  }
+
+  @include respond-to-max(md) {
+    font-size: 18px;
   }
 }
 

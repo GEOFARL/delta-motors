@@ -946,6 +946,10 @@
   background-color: colors.$color-bg-light;
   padding: 160px 0 180px;
 
+  @include respond-to-max(md) {
+    padding: 110px 0 150px;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -953,14 +957,32 @@
     position: relative;
     gap: 64px;
     @include layout.max-width;
+
+    @include respond-to-max(md) {
+      gap: 48px;
+    }
   }
 
   &__title {
     display: flex;
     margin: 0 auto;
     align-items: center;
+    position: relative;
     gap: 32px;
     @include typography.desktop-h2-54-r;
+
+    @include respond-to-max(md) {
+      max-width: 200px;
+      margin: 0;
+      align-self: flex-start;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 90px;
+        transform: scale(0.65) rotate(180deg);
+      }
+    }
 
     span {
       font-weight: 700;
@@ -993,6 +1015,10 @@
       width: 100%;
     }
 
+    @include respond-to-max(md) {
+      padding: 16px;
+    }
+
     &__header {
       display: flex;
       align-items: center;
@@ -1005,6 +1031,10 @@
       font-weight: 700;
       margin-right: 16px;
       @include typography.desktop-sb1-24-sb;
+
+      @include respond-to-max(md) {
+        color: colors.$color-txt;
+      }
     }
 
     &__question {
@@ -1061,6 +1091,10 @@
     top: 190px;
     left: 40px;
     z-index: 0;
+
+    @include respond-to-max(md) {
+      top: 30px;
+    }
   }
 
   &__logo {
