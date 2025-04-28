@@ -1,5 +1,6 @@
 @use "../base/colors";
 @use "../base/layout";
+@use "../base/breakpoints" as *;
 @use "../base/typography";
 
 .site-footer {
@@ -9,6 +10,10 @@
   padding: 72px 140px 0;
   position: relative;
   overflow: hidden;
+
+  @include respond-to-max(lg) {
+    padding: 40px 72px 0;
+  }
 
   &__top,
   &__bottom,
@@ -27,11 +32,24 @@
       display: flex;
       justify-content: space-between;
     }
+
+    @include respond-to-max(lg) {
+      & > div:last-child {
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+      }
+    }
   }
 
   &__nav-container {
     display: flex;
     gap: 132px;
+
+    @include respond-to-max(md) {
+      flex-direction: column;
+      gap: 54px;
+    }
   }
 
   &__contact {
@@ -50,6 +68,12 @@
   &__nav {
     display: flex;
     gap: 132px;
+
+    @include respond-to-max(md) {
+      flex-direction: column;
+      text-align: center;
+      gap: 24px;
+    }
 
     ul {
       list-style: none;
@@ -78,6 +102,23 @@
     gap: 16px;
     margin-top: 128px;
     margin-bottom: 72px;
+
+    @include respond-to-max(lg) {
+      margin-top: 32px;
+      margin-bottom: 50px;
+      justify-content: center;
+    }
+
+    @include respond-to-max(md) {
+      margin-top: 40px;
+      margin-bottom: 50px;
+      justify-content: center;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   &__divider {
@@ -87,6 +128,10 @@
     top: 466px;
     height: 1px;
     background-color: #fafafa33;
+
+    @include respond-to-max(md) {
+      top: 766px;
+    }
   }
 
   &__bottom {
@@ -99,6 +144,13 @@
     color: #c4c4c499;
 
     @include typography.desktop-bt3-14-r;
+
+    @include respond-to-max(md) {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      padding: 30px 0 40px;
+    }
 
     a {
       text-decoration: none;
@@ -118,6 +170,17 @@
     img {
       height: 55px;
       width: 124px;
+    }
+
+    @include respond-to-max(lg) {
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+
+      img {
+        height: 37px;
+        width: 82px;
+      }
     }
   }
 
@@ -155,6 +218,10 @@
 
     img:last-child {
       transform: rotate(180deg);
+    }
+
+    @include respond-to-max(lg) {
+      display: none !important;
     }
   }
 
