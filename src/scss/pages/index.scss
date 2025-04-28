@@ -526,6 +526,10 @@
   color: colors.$color-white;
   position: relative;
 
+  @include respond-to-max(md) {
+    padding: 134px 0 32px 0;
+  }
+
   &__bg-image {
     height: 571px;
     width: 100%;
@@ -547,6 +551,10 @@
       border-radius: 12px;
       z-index: 2;
     }
+
+    @include respond-to-max(md) {
+      display: none;
+    }
   }
 
   &__container {
@@ -564,6 +572,11 @@
     left: -16%;
     width: 100%;
     z-index: -1;
+
+    @include respond-to-max(md) {
+      top: -30px;
+      left: -6%;
+    }
   }
 
   &__rectangle-2 {
@@ -572,6 +585,10 @@
     left: -6%;
     width: 100%;
     z-index: -1;
+
+    @include respond-to-max(md) {
+      display: none;
+    }
   }
 
   &__rectangle-3 {
@@ -579,6 +596,9 @@
     bottom: -8px;
     left: 41%;
     z-index: -1;
+    @include respond-to-max(md) {
+      display: none;
+    }
   }
 
   &__title {
@@ -599,6 +619,21 @@
       top: -150px;
     }
 
+    @include respond-to-max(md) {
+      z-index: 4;
+      color: colors.$color-white;
+      left: 16px;
+      right: unset;
+      top: -100px;
+
+      gap: 8px;
+
+      .advantages__arrows {
+        display: block;
+        transform: scale(0.8);
+      }
+    }
+
     span {
       font-weight: 700;
     }
@@ -616,6 +651,12 @@
     z-index: 1;
     bottom: -262px;
     left: 0;
+
+    @include respond-to-max(md) {
+      transform: scale(0.35);
+      bottom: -92px;
+      left: -130px;
+    }
   }
 
   &__items {
@@ -626,6 +667,13 @@
     width: 100%;
     margin-bottom: 218px;
     padding-bottom: 40px;
+
+    @include respond-to-max(md) {
+      flex-direction: column;
+      margin-top: 20px;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
   }
 
   .advantage-item {
@@ -654,6 +702,10 @@
       max-width: 248px;
       text-align: left;
       @include typography.desktop-sb2-28-b;
+
+      @include respond-to-max(md) {
+        margin-bottom: 8px;
+      }
     }
 
     &__text {
@@ -676,6 +728,20 @@
         border-right: none;
       }
     }
+
+    @include respond-to-max(md) {
+      border-right: none !important;
+      gap: 12px;
+
+      &:last-child {
+        display: flex;
+      }
+
+      img {
+        display: block;
+        transform: scale(0.65);
+      }
+    }
   }
 
   &__footer {
@@ -689,6 +755,19 @@
       max-width: 705px;
       @include typography.desktop-sb2-28-b;
     }
+
+    @include respond-to-max(md) {
+      &-text {
+        color: colors.$color-light-grey;
+      }
+      margin-top: 48px;
+      gap: 48px;
+
+      .cta-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
   }
 
   &__line {
@@ -699,6 +778,12 @@
 
     @include respond-to-max(2xl) {
       left: -810px;
+    }
+
+    @include respond-to-max(md) {
+      transform: scale(0.8);
+      bottom: -70px;
+      left: -1360px;
     }
   }
 }
