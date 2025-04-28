@@ -43,6 +43,11 @@
 
 @mixin desktop-h1-h-1 {
   @include text-style("Arimo", 700, 80px, 130%, 0, italic, null, uppercase);
+
+  @include respond-to-max(md) {
+    font-size: 44px;
+    line-height: 120%;
+  }
 }
 
 @mixin desktop-h2-54-b {

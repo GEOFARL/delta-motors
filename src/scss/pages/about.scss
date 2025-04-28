@@ -1,6 +1,7 @@
 @use "../base/reset";
 @use "../base/layout";
 @use "../base/colors";
+@use "../base/breakpoints" as *;
 @use "../base/typography";
 @use "../components/header";
 @use "../components/testimonials";
@@ -17,10 +18,19 @@
   background-position: 50% 61%;
   z-index: 1;
 
+  @include respond-to-max(lg) {
+    padding-top: 120px;
+    height: 380px;
+  }
+
   &__about-us {
     position: absolute;
     bottom: -70px;
     left: 30px;
+
+    @include respond-to-max(2xl) {
+      display: none;
+    }
   }
 
   &__protectors {
@@ -28,6 +38,10 @@
     top: -410px;
     right: -360px;
     transform: scale(0.6);
+
+    @include respond-to-max(2xl) {
+      display: none;
+    }
   }
 
   &::before {
@@ -48,11 +62,19 @@
 
     @include layout.max-width;
 
+    @include respond-to-max(md) {
+      padding-left: 16px !important;
+    }
+
     .hero-title {
       @include typography.desktop-h1-h-1;
       color: #f8f7fc;
       margin-bottom: 32px;
       z-index: 3;
+
+      @include respond-to-max(md) {
+        margin-bottom: 24px;
+      }
     }
 
     .hero-subtitle {
@@ -76,6 +98,10 @@
     img {
       height: 101%;
       transform: translateX(calc(-100% + 4px));
+    }
+
+    @include respond-to-max(lg) {
+      height: 34px;
     }
   }
 
@@ -103,6 +129,10 @@
     top: -140px;
     right: 200px;
     z-index: 3;
+
+    @include respond-to-max(2xl) {
+      display: none;
+    }
   }
 
   &__container {
