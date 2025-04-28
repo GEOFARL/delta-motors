@@ -15,11 +15,24 @@
     }
 
     @include layout.max-width;
+
+    @include respond-to-max(md) {
+      flex-direction: column;
+
+      .cta-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
   }
 
   &__title {
     margin: 34px 0 16px;
     @include typography.desktop-h2-54-b;
+
+    @include respond-to-max(md) {
+      font-size: 32px !important;
+    }
   }
 
   &__description {
@@ -34,6 +47,11 @@
     overflow: hidden;
     position: relative;
     border-radius: 12px;
+
+    @include respond-to-max(md) {
+      height: 300px;
+      flex: unset;
+    }
 
     img {
       position: relative;
@@ -70,6 +88,17 @@
 
       transform: scale(0.8);
     }
+
+    @include respond-to-max(sm) {
+      top: -20px !important;
+      left: -43% !important;
+    }
+
+    @include respond-to-max(md) {
+      transform: scale(0.35);
+      top: -20px !important;
+      left: -3%;
+    }
   }
 
   &__contact-us {
@@ -77,6 +106,11 @@
     bottom: 20px;
     right: 0;
     z-index: 2 !important;
+
+    @include respond-to-max(md) {
+      transform: scale(0.65);
+      right: -100px;
+    }
   }
 
   &__vector-arrows-1 {
@@ -84,6 +118,12 @@
     left: 100px;
     z-index: 3 !important;
     transform: scale(1.4) rotate(180deg);
+
+    @include respond-to-max(md) {
+      transform: scale(0.8) rotate(180deg);
+      top: 80px !important;
+      left: 40px;
+    }
   }
 
   &__vector-arrows-2 {
@@ -111,6 +151,12 @@
     bottom: 0;
     right: 0;
     transform: rotate(180deg);
+
+    @include respond-to-max(md) {
+      bottom: -460px;
+      transform: scale(1.4) rotate(180deg);
+      right: 20px;
+    }
   }
 
   .form-field {
