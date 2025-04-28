@@ -20553,7 +20553,11 @@
 	  initSwiper(".cars-for-u-swiper", 20);
 	  initSwiper(".main-image-swiper", 40, 1);
 	  initSwiper(".testimonials-swiper", 28, 3, {
-	    1024: {
+	    350: {
+	      slidesPerView: 1,
+	      spaceBetween: 40,
+	    },
+	    768: {
 	      slidesPerView: 2,
 	      spaceBetween: 40,
 	    },
