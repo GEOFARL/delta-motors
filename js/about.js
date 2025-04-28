@@ -20530,13 +20530,13 @@
 	    });
 	  };
 
-	  initSwiper(".available-cars-swiper", 40, 3, {
+	  initSwiper(".available-cars-swiper", 40, 1, {
 	    1024: {
 	      slidesPerView: 2,
 	      spaceBetween: 40,
 	    },
 	  });
-	  initSwiper(".auction-cars-swiper", 40, 3, {
+	  initSwiper(".auction-cars-swiper", 40, 1, {
 	    1024: {
 	      slidesPerView: 2,
 	      spaceBetween: 40,

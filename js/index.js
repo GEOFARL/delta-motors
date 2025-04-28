@@ -20571,13 +20571,13 @@
 	    });
 	  };
 
-	  initSwiper(".available-cars-swiper", 40, 3, {
+	  initSwiper(".available-cars-swiper", 40, 1, {
 	    1024: {
 	      slidesPerView: 2,
 	      spaceBetween: 40,
 	    },
 	  });
-	  initSwiper(".auction-cars-swiper", 40, 3, {
+	  initSwiper(".auction-cars-swiper", 40, 1, {
 	    1024: {
 	      slidesPerView: 2,
 	      spaceBetween: 40,
@@ -20605,11 +20605,15 @@
 	    });
 	  };
 
+	  const isDesktop = () => window.matchMedia("(min-width: 769px)").matches;
+
 	  $(".service-item").each(function (index) {
-	    $(this).on("mouseenter", () => {
-	      $(".service-item").removeClass("active");
-	      $(this).addClass("active");
-	      updateMedia(index);
+	    $(this).on("mouseenter", function () {
+	      if (isDesktop()) {
+	        $(".service-item").removeClass("active");
+	        $(this).addClass("active");
+	        updateMedia(index);
+	      }
 	    });
 	  });
 	});
