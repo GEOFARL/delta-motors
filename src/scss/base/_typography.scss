@@ -33,6 +33,12 @@
   @include respond-to-max(2xl) {
     font-size: 120px;
   }
+
+  @include respond-to-max(md) {
+    font-size: 76px;
+    line-height: 110%;
+    letter-spacing: -2px;
+  }
 }
 
 @mixin desktop-h1-h-1 {
@@ -44,6 +50,10 @@
 
   @include respond-to-max(2xl) {
     font-size: 48px;
+  }
+
+  @include respond-to-max(md) {
+    font-size: 24px;
   }
 }
 
@@ -84,6 +94,11 @@
 
   @include respond-to-max(2xl) {
     font-size: 20px;
+  }
+
+  @include respond-to-max(md) {
+    font-size: 14px;
+    line-height: 120%;
   }
 }
 
@@ -136,6 +151,10 @@
 
   @include respond-to-max(2xl) {
     font-size: 24px;
+  }
+
+  @include respond-to-max(md) {
+    font-size: 20px;
   }
 }
 
