@@ -63,6 +63,11 @@
   @include respond-to-max(2xl) {
     font-size: 48px;
   }
+
+  @include respond-to-max(md) {
+    font-size: 32px;
+    line-height: 130%;
+  }
 }
 
 @mixin desktop-sb1-24-sb {
@@ -107,6 +112,11 @@
 
   @include respond-to-max(2xl) {
     font-size: 24px;
+  }
+
+  @include respond-to-max(md) {
+    font-size: 20px;
+    line-height: 140%;
   }
 }
 
@@ -160,6 +170,10 @@
 
 @mixin service-numbers {
   @include text-style("Arimo", 400, 32px, 140%, 0);
+
+  @include respond-to-max(md) {
+    font-size: 18px;
+  }
 }
 
 @mixin auction-subtitle {

@@ -23,9 +23,24 @@
   position: relative;
   @include layout.max-width;
 
+  @include respond-to-max(md) {
+    flex-direction: column;
+    gap: 40px;
+    padding: 80px 16px 180px 16px;
+  }
+
   &-swiper {
     position: relative;
     z-index: 2;
+
+    @include respond-to-max(md) {
+      width: 100%;
+
+      .car-card {
+        width: 100%;
+        max-width: unset;
+      }
+    }
 
     .swiper-button-next,
     .swiper-button-prev {
@@ -48,6 +63,10 @@
 
     .swiper-button-next {
       right: 26px;
+
+      @include respond-to-max(md) {
+        right: 9px;
+      }
     }
 
     .swiper-button-prev {
@@ -67,6 +86,10 @@
     z-index: 2;
     gap: 64px;
 
+    @include respond-to-max(md) {
+      margin-bottom: 0px;
+    }
+
     .available-cars__title,
     .auction-cars__title {
       display: flex;
@@ -85,6 +108,17 @@
       margin-top: -40px;
       @include typography.auction-subtitle;
     }
+
+    @include respond-to-max(md) {
+      .cta-button {
+        position: absolute;
+        bottom: 80px;
+        left: 16px;
+        width: 93%;
+
+        justify-content: center;
+      }
+    }
   }
 
   &__arrows {
@@ -96,16 +130,34 @@
     img {
       margin-left: -6px;
     }
+
+    @include respond-to-max(md) {
+      transform: scale(0.75);
+      top: 3px;
+      right: -5px;
+    }
   }
 
   .auction-cars__arrows {
     right: -30px;
   }
 
+  .auction-cars__title-line {
+    @include respond-to-max(md) {
+      bottom: 10px;
+      left: -350px;
+      transform: scale(0.8);
+    }
+  }
+
   &__large-arrows {
     position: absolute;
     bottom: 140px;
     left: -140px;
+
+    @include respond-to-max(md) {
+      display: none;
+    }
   }
 
   &__title-line {
@@ -137,6 +189,12 @@
     @include respond-to-max(2xl) {
       right: -20px;
     }
+
+    @include respond-to-max(md) {
+      right: -690px;
+      bottom: 10px;
+      transform: scale(0.8);
+    }
   }
 }
 
@@ -146,6 +204,19 @@
   margin-top: 80px;
   position: relative;
 
+  &__cta {
+    display: none;
+
+    @include respond-to-max(md) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @include respond-to-max(md) {
+    padding: 80px 0 90px 0;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -154,6 +225,10 @@
     gap: 108px;
 
     @include layout.max-width;
+
+    @include respond-to-max(md) {
+      gap: 48px;
+    }
   }
 
   &__title {
@@ -168,6 +243,11 @@
   &__content {
     display: flex;
     align-items: center;
+
+    @include respond-to-max(md) {
+      flex-direction: column-reverse;
+      gap: 24px;
+    }
   }
 
   &__list {
@@ -184,6 +264,10 @@
       margin-left: -75px;
     }
 
+    @include respond-to-max(md) {
+      margin-left: 0;
+    }
+
     .service-item {
       display: flex;
       align-items: center;
@@ -194,6 +278,10 @@
         display: flex;
         align-items: center;
         gap: 24px;
+
+        @include respond-to-max(md) {
+          gap: 16px;
+        }
       }
 
       &__text {
@@ -208,6 +296,10 @@
         padding: 24.5px 45px;
         transition: all 0.3s ease;
         @include typography.service-numbers;
+
+        @include respond-to-max(md) {
+          padding: 11px 22px;
+        }
       }
 
       img {
@@ -223,6 +315,16 @@
         img {
           transform: rotate(-90deg);
         }
+
+        @include respond-to-max(md) {
+          .service-item__content {
+            color: colors.$color-white;
+          }
+
+          img {
+            transform: unset;
+          }
+        }
       }
     }
   }
@@ -230,12 +332,20 @@
   &__media-container {
     position: relative;
 
+    @include respond-to-max(md) {
+      width: 100%;
+    }
+
     .services__media-rectangle {
       height: 720px;
       position: absolute;
       z-index: 0;
       top: -10px;
       right: -10px;
+
+      @include respond-to-max(md) {
+        display: none;
+      }
     }
 
     .services__media-rectangle-overlay {
@@ -256,6 +366,11 @@
 
     @include respond-to-max(2xl) {
       width: 750px;
+    }
+
+    @include respond-to-max(md) {
+      width: 100%;
+      height: 350px;
     }
 
     .media-img,
@@ -279,6 +394,11 @@
 
       @include respond-to-max(2xl) {
         margin: 280px 0 0 40px;
+      }
+
+      @include respond-to-max(md) {
+        margin: 40px 0 0 40px;
+        display: none;
       }
 
       h3 {
@@ -343,6 +463,10 @@
     top: -50px;
     left: 0;
     width: 100%;
+
+    @include respond-to-max(md) {
+      top: -30px;
+    }
   }
 
   &__blue-accent {
@@ -351,24 +475,46 @@
     top: -23px;
     left: -6%;
     width: 100%;
+
+    @include respond-to-max(md) {
+      transform: scale(0.6);
+      top: -33px;
+      left: -36%;
+    }
   }
 
   &__delta-motors {
     position: absolute;
     top: -50px;
     right: 0;
+
+    @include respond-to-max(md) {
+      display: none;
+    }
   }
 
   &__vector-arrows {
     position: absolute;
     top: -190px;
     right: 160px;
+
+    @include respond-to-max(md) {
+      transform: scale(0.6);
+      top: -170px;
+      right: -60px;
+    }
   }
 
   &__vector-arrows-2 {
     position: absolute;
     top: 90px;
     left: 330px;
+
+    @include respond-to-max(md) {
+      top: 3px;
+      left: 290px;
+      transform: scale(0.8);
+    }
   }
 }
 

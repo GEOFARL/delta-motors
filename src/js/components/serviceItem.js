@@ -12,11 +12,15 @@ $(document).ready(function () {
     });
   };
 
+  const isDesktop = () => window.matchMedia("(min-width: 769px)").matches;
+
   $(".service-item").each(function (index) {
-    $(this).on("mouseenter", () => {
-      $(".service-item").removeClass("active");
-      $(this).addClass("active");
-      updateMedia(index);
+    $(this).on("mouseenter", function () {
+      if (isDesktop()) {
+        $(".service-item").removeClass("active");
+        $(this).addClass("active");
+        updateMedia(index);
+      }
     });
   });
 });
