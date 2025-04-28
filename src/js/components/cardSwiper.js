@@ -26,13 +26,21 @@ $(document).ready(function () {
     });
   };
 
-  initSwiper(".available-cars-swiper", 40, 1, {
+  initSwiper(".available-cars-swiper", 40, 3, {
+    350: {
+      slidesPerView: 1,
+      spaceBetween: 40,
+    },
     1024: {
       slidesPerView: 2,
       spaceBetween: 40,
     },
   });
-  initSwiper(".auction-cars-swiper", 40, 1, {
+  initSwiper(".auction-cars-swiper", 40, 3, {
+    350: {
+      slidesPerView: 1,
+      spaceBetween: 40,
+    },
     1024: {
       slidesPerView: 2,
       spaceBetween: 40,
