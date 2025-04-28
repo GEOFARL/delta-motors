@@ -16,7 +16,7 @@
 
     @include layout.max-width;
 
-    @include respond-to-max(md) {
+    @include respond-to-max(lg) {
       flex-direction: column;
 
       .cta-button {
@@ -61,6 +61,14 @@
       height: auto;
 
       @include respond-to-max(2xl) {
+        top: -250px;
+      }
+
+      @include respond-to-max(lg) {
+        top: 0;
+      }
+
+      @include respond-to-max(md) {
         top: -250px;
       }
     }
@@ -151,8 +159,12 @@
     bottom: 0;
     right: 0;
     transform: rotate(180deg);
+    @include respond-to-max(lg) {
+      display: none;
+    }
 
     @include respond-to-max(md) {
+      display: block;
       bottom: -460px;
       transform: scale(1.4) rotate(180deg);
       right: 20px;
