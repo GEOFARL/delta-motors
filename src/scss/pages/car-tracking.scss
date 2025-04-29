@@ -1,5 +1,6 @@
 @use "../base/reset";
 @use "../base/layout";
+@use "../base/breakpoints" as *;
 @use "../base/colors";
 @use "../base/typography";
 @use "../components/header";
@@ -12,6 +13,10 @@
   height: 395px;
   background-color: colors.$color-accent-dark;
   z-index: 1;
+
+  @include respond-to-max(lg) {
+    height: 280px;
+  }
 
   .bottom-block {
     height: 32px;
@@ -55,22 +60,57 @@
   left: 70px;
   z-index: 2;
 
+  @include respond-to-max(lg) {
+    left: 24px;
+  }
+
+  @include respond-to-max(md) {
+    left: 16px;
+  }
+
   &__delta-motors {
     position: absolute;
     bottom: -140px;
     right: 170px;
+
+    @include respond-to-max(2xl) {
+      display: none;
+    }
   }
 
   &__container {
     gap: 83px !important;
     display: flex !important;
     @include layout.max-width;
+
+    @include respond-to-max(2xl) {
+      gap: 40px !important;
+    }
+
+    @include respond-to-max(lg) {
+      flex-direction: column;
+      margin-top: 90px;
+    }
+
+    @include respond-to-max(md) {
+      padding: 0 !important;
+    }
   }
 
   &__title {
     color: colors.$color-white;
     margin-bottom: 140px;
     @include typography.desktop-h1-h-1;
+
+    @include respond-to-max(2xl) {
+      font-size: 60px;
+      margin-bottom: 170px;
+    }
+
+    @include respond-to-max(lg) {
+      font-size: 44px;
+      margin-bottom: 100px;
+    }
   }
 
   &__image-block {
@@ -80,6 +120,19 @@
     overflow: hidden;
     border-radius: 12px;
 
+    @include respond-to-max(2xl) {
+      width: 400px;
+      height: 300px;
+
+      img {
+        top: -100px !important;
+      }
+    }
+
+    @include respond-to-max(md) {
+      width: calc(100% - 32px);
+    }
+
     img {
       position: absolute;
       width: 100%;
@@ -88,16 +141,40 @@
     }
   }
 
+  &__vector-arrows-1 {
+    @include respond-to-max(lg) {
+      transform: scale(0.8);
+    }
+  }
+
   &__vector-arrows-2 {
     position: absolute;
     bottom: -220px;
     left: -80px;
+
+    @include respond-to-max(2xl) {
+      bottom: -340px;
+    }
   }
 
   &__description {
     max-width: 675px;
     margin-bottom: 63px;
     @include typography.desktop-sb1-24-m;
+
+    @include respond-to-max(2xl) {
+      font-size: 20px;
+      line-height: 130%;
+    }
+
+    @include respond-to-max(lg) {
+      margin-bottom: 0;
+      max-width: 500px;
+    }
+
+    @include respond-to-max(md) {
+      width: calc(100% - 32px);
+    }
   }
 
   .smart-form {
@@ -105,6 +182,10 @@
     align-items: flex-end;
     gap: 32px;
     max-width: 545px;
+
+    @include respond-to-max(md) {
+      width: calc(100% - 32px);
+    }
 
     .form-field {
       flex: 1;
