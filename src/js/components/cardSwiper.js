@@ -26,24 +26,24 @@ $(document).ready(function () {
     });
   };
 
-  initSwiper(".available-cars-swiper", 40, 3, {
+  initSwiper(".available-cars-swiper", 20, 3, {
     350: {
       slidesPerView: 1,
-      spaceBetween: 40,
+      spaceBetween: 20,
     },
     1024: {
       slidesPerView: 2,
-      spaceBetween: 40,
+      spaceBetween: 20,
     },
   });
-  initSwiper(".auction-cars-swiper", 40, 3, {
+  initSwiper(".auction-cars-swiper", 20, 3, {
     350: {
       slidesPerView: 1,
-      spaceBetween: 40,
+      spaceBetween: 20,
     },
     1024: {
       slidesPerView: 2,
-      spaceBetween: 40,
+      spaceBetween: 20,
     },
   });
   initSwiper(".cars-for-u-swiper", 20);

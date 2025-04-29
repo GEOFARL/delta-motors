@@ -8,10 +8,11 @@ $max-widths: (
   lg: 1024px,
   xl: 1280px,
   2xl: 1536px,
+  screen: 1640px,
   3xl: 1920px,
 );
 
-@mixin max-width($key: 3xl, $padding: 16px) {
+@mixin max-width($key: screen, $padding: 40px) {
   $width: map.get($max-widths, $key);
 
   max-width: $width;
@@ -20,13 +21,13 @@ $max-widths: (
   padding-left: $padding;
   padding-right: $padding;
 
-  @include bp.respond-to(sm) {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  @include bp.respond-to(md) {
+  @include bp.respond-to-max(lg) {
     padding-left: 32px;
     padding-right: 32px;
+  }
+
+  @include bp.respond-to-max(md) {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }

@@ -62,7 +62,7 @@
     }
 
     .swiper-button-next {
-      right: 26px;
+      right: 10px;
 
       @include respond-to-max(md) {
         right: 9px;
@@ -184,7 +184,7 @@
   &__text-image {
     position: absolute;
     bottom: 40px;
-    right: 110px;
+    right: -170px;
 
     @include respond-to-max(2xl) {
       right: -20px;
@@ -449,7 +449,7 @@
   &__our-services-line {
     position: absolute;
     bottom: -20px;
-    right: 230px;
+    right: -200px;
 
     @include respond-to-max(2xl) {
       bottom: -60px;
@@ -486,7 +486,7 @@
   &__delta-motors {
     position: absolute;
     top: -50px;
-    right: 0;
+    right: -100px;
 
     @include respond-to-max(md) {
       display: none;
@@ -496,7 +496,7 @@
   &__vector-arrows {
     position: absolute;
     top: -190px;
-    right: 160px;
+    right: 0;
 
     @include respond-to-max(md) {
       transform: scale(0.6);
@@ -663,7 +663,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 20px;
     width: 100%;
     margin-bottom: 218px;
     padding-bottom: 40px;
@@ -681,7 +681,7 @@
     min-width: 240px;
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 16px;
 
     &:not(:last-child) {
       border-right: 1px solid #fafafa80;
@@ -774,7 +774,7 @@
     position: absolute;
     bottom: 80px;
     z-index: 1;
-    left: 290px;
+    left: 0;
 
     @include respond-to-max(2xl) {
       left: -810px;
@@ -856,7 +856,7 @@
   }
 
   &__rectangle {
-    left: 10%;
+    left: 22%;
 
     @include respond-to-max(2xl) {
       left: 25%;
@@ -1100,7 +1100,7 @@
   &__logo {
     position: absolute;
     top: -210px;
-    left: -20px;
+    left: -120px;
     z-index: 0;
 
     @include respond-to-max(md) {

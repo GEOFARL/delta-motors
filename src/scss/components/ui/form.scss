@@ -8,7 +8,7 @@
 
   &__container {
     display: flex;
-    gap: 240px;
+    gap: 110px;
 
     @include respond-to-max(2xl) {
       gap: 56px;
