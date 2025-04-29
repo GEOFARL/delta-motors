@@ -7,8 +7,10 @@
 .header {
   padding: 12.5px;
   border-bottom: 1px solid #c4c4c466;
-  position: relative;
-  z-index: 2;
+  position: sticky;
+  background: colors.$color-accent-dark;
+  z-index: 9999999;
+  top: 0;
 
   .burger {
     display: none;
