@@ -139,6 +139,14 @@
     position: relative;
     padding: 94px 0 220px;
     @include layout.max-width;
+
+    @include respond-to-max(lg) {
+      padding: 64px 16px 160px;
+    }
+
+    @include respond-to-max(md) {
+      padding: 0 16px 80px;
+    }
   }
 
   &__grid {
@@ -147,6 +155,18 @@
     position: relative;
     z-index: 4;
     gap: 45px;
+
+    @include respond-to-max(2xl) {
+      gap: 24px;
+    }
+
+    @include respond-to-max(lg) {
+      gap: 16px;
+    }
+
+    @include respond-to-max(md) {
+      gap: 12px;
+    }
   }
 
   .numbers-item {
@@ -161,7 +181,24 @@
     }
 
     .numbers-label {
+      text-align: center;
       @include typography.desktop-sb2-28-b;
+
+      @include respond-to-max(lg) {
+        font-size: 18px !important;
+      }
+
+      @include respond-to-max(md) {
+        font-size: 14px !important;
+      }
+    }
+
+    @include respond-to-max(lg) {
+      min-width: 250px;
+    }
+
+    @include respond-to-max(md) {
+      min-width: unset;
     }
   }
 
@@ -169,6 +206,7 @@
     height: 102px;
     width: 1px;
     background-color: colors.$color-accent-1;
+    flex-shrink: 0;
   }
 
   &__vector-arrows {
@@ -176,12 +214,22 @@
     top: -70px;
     left: 0;
     z-index: 3;
+
+    @include respond-to-max(md) {
+      display: none;
+    }
   }
 
   &__numbers {
     position: absolute;
     bottom: 80px;
     right: 0;
+
+    @include respond-to-max(md) {
+      transform: scale(0.75);
+      bottom: 30px;
+      right: -270px;
+    }
   }
 }
 

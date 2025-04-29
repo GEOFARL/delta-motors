@@ -203,4 +203,16 @@
 
 @mixin number-value {
   @include text-style("Arimo", 700, 72px, 130%, 0);
+
+  @include respond-to-max(2xl) {
+    font-size: 56px;
+  }
+
+  @include respond-to-max(lg) {
+    font-size: 48px;
+  }
+
+  @include respond-to-max(md) {
+    font-size: 40px;
+  }
 }
