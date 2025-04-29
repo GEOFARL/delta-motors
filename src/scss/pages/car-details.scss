@@ -82,7 +82,7 @@
       position: absolute;
       transform: rotate(180deg);
       top: 15px;
-      right: 360px;
+      right: 70px;
     }
   }
 
@@ -267,7 +267,7 @@
   &__vertical-line {
     position: absolute;
     top: 90px;
-    right: 90px;
+    right: -60px;
     z-index: -1;
   }
 }
@@ -336,12 +336,14 @@
     gap: 28px;
     align-items: center;
     @include layout.max-width;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   &__line-vector {
     position: absolute;
     bottom: -110px;
-    left: 0;
+    left: -150px;
   }
 
   &__text-container {
@@ -372,7 +374,7 @@
   &__vector-arrows-2 {
     position: absolute;
     top: 14px;
-    right: 230px;
+    right: 40px;
   }
 
   .car-card__title {
