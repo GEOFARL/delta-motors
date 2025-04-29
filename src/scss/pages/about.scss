@@ -533,6 +533,10 @@
     z-index: 1;
     gap: 64px;
 
+    @include respond-to-max(md) {
+      gap: 48px;
+    }
+
     @include layout.max-width;
   }
 
@@ -544,11 +548,20 @@
       font-weight: 700;
       margin-left: 66px;
     }
+
+    @include respond-to-max(lg) {
+      text-align: center;
+    }
   }
 
   &__content {
     display: flex;
     align-items: center;
+
+    @include respond-to-max(lg) {
+      flex-direction: column-reverse;
+      gap: 24px;
+    }
   }
 
   &__list {
@@ -561,6 +574,14 @@
     position: relative;
     z-index: 2;
 
+    @include respond-to-max(2xl) {
+      margin-left: -95px;
+    }
+
+    @include respond-to-max(2xl) {
+      margin-left: 0;
+    }
+
     .benefit-item {
       display: flex;
       align-items: center;
@@ -571,6 +592,10 @@
         display: flex;
         align-items: center;
         gap: 24px;
+
+        @include respond-to-max(md) {
+          gap: 12px;
+        }
       }
 
       &__text {
@@ -581,6 +606,10 @@
         color: colors.$color-accent-dark;
 
         @include typography.desktop-sb2-28-b;
+
+        @include respond-to-max(md) {
+          gap: 4px;
+        }
       }
 
       &__subtitle {
@@ -595,6 +624,15 @@
         padding: 26px 45px;
         transition: all 0.3s ease;
         @include typography.service-numbers;
+
+        @include respond-to-max(2xl) {
+          padding: 18px 36px;
+        }
+
+        @include respond-to-max(md) {
+          padding: 25.5px 13.5px;
+          border-radius: 4px;
+        }
       }
 
       img {
@@ -611,6 +649,10 @@
       z-index: 0;
       left: -11px;
       top: -11px;
+
+      @include respond-to-max(2xl) {
+        display: none;
+      }
     }
   }
 
@@ -621,6 +663,16 @@
     z-index: 2;
     border-radius: 12px;
     overflow: hidden;
+
+    @include respond-to-max(2xl) {
+      width: 700px;
+      height: 552px;
+    }
+
+    @include respond-to-max(lg) {
+      width: 100%;
+      height: unset;
+    }
 
     .media-img,
     .media-content {
@@ -684,12 +736,23 @@
     position: absolute;
     top: 110px;
     right: 134px;
+
+    @include respond-to-max(2xl) {
+      top: unset;
+      bottom: -140px;
+      right: -46px;
+    }
   }
 
   &__arrows {
     position: absolute;
     top: 14px;
     left: 520px;
+
+    @include respond-to-max(lg) {
+      left: 740px;
+      transform: scale(0.8);
+    }
   }
 
   &__arrows-2 {
@@ -697,5 +760,16 @@
     bottom: -52px;
     left: 0;
     z-index: 2;
+
+    @include respond-to-max(md) {
+      transform: scale(0.5);
+      left: 100px;
+    }
+  }
+}
+
+@include respond-to-max(lg) {
+  .testimonials {
+    padding-bottom: 80px;
   }
 }
