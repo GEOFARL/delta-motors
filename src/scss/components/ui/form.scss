@@ -16,6 +16,8 @@
 
     @include layout.max-width;
 
+    max-width: 1640px !important;
+
     @include respond-to-max(lg) {
       flex-direction: column;
 
@@ -56,7 +58,7 @@
     img {
       position: relative;
       z-index: 1;
-      top: -520px;
+      top: -340px;
       width: 100%;
       height: auto;
 
