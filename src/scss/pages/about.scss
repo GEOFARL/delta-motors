@@ -126,8 +126,8 @@
 .numbers-section {
   &__delta-motors {
     position: absolute;
-    top: -140px;
-    right: 200px;
+    top: -160px;
+    right: 80px;
     z-index: 3;
 
     @include respond-to-max(2xl) {
@@ -304,7 +304,7 @@
       bottom: -12px;
     }
 
-    @include respond-to-max(md) {
+    @include respond-to-max(lg) {
       display: none;
     }
   }
@@ -359,7 +359,7 @@
     right: 0;
     z-index: 2;
 
-    @include respond-to-max(2xl) {
+    @include respond-to-max(lg) {
       transform: scale(0.4);
       top: unset;
       right: unset;
@@ -409,7 +409,7 @@
 
   &__vertical-line {
     position: absolute;
-    right: 0;
+    right: -140px;
     bottom: -110px;
 
     @include respond-to-max(lg) {
@@ -479,7 +479,7 @@
   &__car-logos {
     position: absolute;
     bottom: -120px;
-    right: calc(50% - 680px);
+    right: calc(50% - 890px);
 
     &-mini {
       display: none;
@@ -501,8 +501,8 @@
 
   &__protectors {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -60px;
+    left: -270px;
     transform: scale(0.6) rotate(-60deg);
 
     @include respond-to-max(2xl) {
@@ -735,7 +735,7 @@
   &__what-you-get {
     position: absolute;
     top: 110px;
-    right: 134px;
+    right: -146px;
 
     @include respond-to-max(2xl) {
       top: unset;
