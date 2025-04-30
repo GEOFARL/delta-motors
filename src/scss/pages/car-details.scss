@@ -381,6 +381,10 @@
   position: relative;
   z-index: 4;
 
+  @include respond-to-max(lg) {
+    padding: 20px 0 0 0;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -389,6 +393,22 @@
     padding-top: 270px;
     z-index: 1;
     @include layout.max-width;
+
+    @include respond-to-max(lg) {
+      padding-top: 450px;
+    }
+
+    @include respond-to-max(md) {
+      margin-bottom: 550px;
+    }
+
+    @media screen and (max-width: 500px) {
+      margin-bottom: 350px;
+    }
+
+    @media screen and (max-width: 400px) {
+      padding-top: 350px;
+    }
   }
 
   &__rectangle {
@@ -402,6 +422,10 @@
     top: -180px;
     right: 0;
     z-index: 2;
+
+    @include respond-to-max(lg) {
+      display: none;
+    }
   }
 
   &__vertical-line {
@@ -435,6 +459,28 @@
 
     display: flex;
     gap: 28px;
+
+    @media screen and (max-width: 1680px) {
+      gap: 120px;
+    }
+
+    @media screen and (max-width: 1280px) {
+      gap: 80px;
+    }
+
+    @include respond-to-max(lg) {
+      flex-direction: column;
+      gap: 34px;
+      transform: unset;
+      left: 16px;
+      right: 16px;
+      top: 15px;
+
+      .car-card {
+        max-width: 100%;
+      }
+    }
+
     align-items: center;
     @include layout.max-width;
     padding-left: 0 !important;
@@ -455,10 +501,16 @@
     display: flex;
     flex-direction: column;
     gap: 56px;
+
+    @include respond-to-max(lg) {
+      gap: 24px;
+    }
   }
 
   &__title {
     @include typography.desktop-h2-54-r;
+
+    text-wrap: nowrap;
 
     span {
       font-weight: 700;
@@ -470,12 +522,27 @@
     max-width: 324px;
     @include typography.auction-subtitle;
     color: #3d3f45;
+
+    @include respond-to-max(lg) {
+      color: colors.$color-white;
+    }
   }
 
   &__vector-arrows-2 {
     position: absolute;
     top: 14px;
     right: 40px;
+
+    @media screen and (max-width: 1680px) {
+      right: -52px;
+    }
+
+    @include respond-to-max(md) {
+      right: unset;
+      left: 156px;
+      top: 0;
+      transform: scale(0.8);
+    }
   }
 
   .car-card__title {
@@ -490,6 +557,17 @@
 
   .cars-for-u-swiper {
     min-width: 1210px;
+    @media screen and (max-width: 1680px) {
+      min-width: unset;
+      width: 800px;
+      flex-shrink: 0;
+    }
+    @media screen and (max-width: 1280px) {
+      width: 650px;
+    }
+    @include respond-to-max(md) {
+      width: 100%;
+    }
     position: relative;
   }
 
