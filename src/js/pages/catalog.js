@@ -1,9 +1,11 @@
 import $ from "jquery";
 import { initDropdown } from "../components/dropdown";
+import { initMobileMenu } from "../components/mobileMenu";
 
 $(function () {
   console.log("Catalog page initialized");
   updateCatalogPage();
+  initMobileMenu();
   initDropdown();
   $(window).on("hashchange", updateCatalogPage);
 });
