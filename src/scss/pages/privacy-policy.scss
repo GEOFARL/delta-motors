@@ -1,4 +1,5 @@
 @use "../base/reset";
+@use "../base/breakpoints" as *;
 @use "../components/header";
 @use "../components/footer";
 @use "../base/colors";
@@ -12,6 +13,10 @@
   background-color: colors.$color-accent-dark;
   z-index: 1;
 
+  @include respond-to-max(md) {
+    height: 280px;
+  }
+
   .bottom-block {
     height: 32px;
     width: 50%;
@@ -19,11 +24,20 @@
 
     position: absolute;
     bottom: -32px;
+
+    @include respond-to-max(md) {
+      bottom: -18px;
+    }
     left: 0;
     .rectangle {
       position: absolute;
       top: -317px;
       right: -700px;
+
+      @include respond-to-max(md) {
+        top: -317px;
+        right: -540px;
+      }
     }
   }
 
@@ -40,12 +54,26 @@
   &__title {
     color: colors.$color-white;
     @include typography.desktop-h2-54-b;
+
+    @include respond-to-max(md) {
+      font-size: 32px !important;
+    }
   }
 
   &__vector-arrows {
     position: absolute;
     bottom: -210px;
     left: -250px;
+
+    @include respond-to-max(lg) {
+      bottom: -160px;
+    }
+
+    @include respond-to-max(md) {
+      transform: scale(0.4);
+      bottom: -143px;
+      left: -130px;
+    }
   }
 
   &-content {
@@ -53,6 +81,10 @@
     padding-top: 200px;
     position: relative;
     @include layout.max-width;
+
+    @include respond-to-max(md) {
+      padding-top: 128px;
+    }
   }
 
   &__protectors-1 {
@@ -60,6 +92,9 @@
     position: absolute;
     top: -450px;
     left: -450px;
+    @include respond-to-max(md) {
+      display: none;
+    }
   }
 
   &__protectors-2 {
@@ -67,11 +102,18 @@
     position: absolute;
     top: -440px;
     right: -570px;
+    @include respond-to-max(md) {
+      display: none;
+    }
   }
 }
 
 .privacy-policy {
   margin: 20px 0 200px;
+
+  @include respond-to-max(md) {
+    margin-top: -12px;
+  }
   &__content {
     position: relative;
     @include layout.max-width;
@@ -101,6 +143,6 @@
   &__delta-motors {
     position: absolute;
     bottom: -180px;
-    left: -130px;
+    left: 20px;
   }
 }
