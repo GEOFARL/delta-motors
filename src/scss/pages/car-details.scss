@@ -1,4 +1,5 @@
 @use "../base/reset";
+@use "../base/breakpoints" as *;
 @use "../base/layout";
 @use "../base/colors";
 @use "../base/typography";
@@ -12,6 +13,10 @@
   position: relative;
   top: -90px;
   height: 318px;
+
+  @include respond-to-max(md) {
+    height: 250px;
+  }
   background-color: colors.$color-accent-dark;
   z-index: 1;
 
@@ -41,6 +46,10 @@
     position: absolute;
     top: -450px;
     left: -450px;
+
+    @include respond-to-max(md) {
+      display: none;
+    }
   }
 
   &__protectors-2 {
@@ -54,6 +63,14 @@
     position: absolute;
     top: 290px;
     left: -140px;
+
+    @include respond-to-max(lg) {
+      transform: scale(0.6);
+    }
+    @include respond-to-max(md) {
+      transform: scale(0.4);
+      top: 223px;
+    }
   }
 }
 
@@ -67,6 +84,19 @@
     left: 50px;
     z-index: 3;
 
+    @include respond-to-max(2xl) {
+      left: 0;
+    }
+
+    @include respond-to-max(lg) {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    @include respond-to-max(md) {
+      padding-top: 42px;
+    }
+
     @include layout.max-width;
   }
 
@@ -78,16 +108,42 @@
     position: relative;
     gap: 24px;
 
+    &--mobile {
+      display: none;
+    }
+    @include respond-to-max(lg) {
+      &--mobile {
+        display: flex;
+        margin-bottom: 102px;
+      }
+
+      &--desktop {
+        display: none;
+      }
+    }
+
     .car-details__vector-arrows-2 {
       position: absolute;
       transform: rotate(180deg);
       top: 15px;
       right: 70px;
+
+      @include respond-to-max(2xl) {
+        display: none;
+      }
     }
   }
 
   &__title {
     @include typography.desktop-h2-54-b;
+
+    @include respond-to-max(2xl) {
+      font-size: 40px !important;
+    }
+
+    @include respond-to-max(md) {
+      font-size: 32px !important;
+    }
   }
 
   &__price {
@@ -99,6 +155,14 @@
   &__price-usd {
     color: colors.$color-blue-light;
     @include typography.desktop-h2-54-r;
+
+    @include respond-to-max(2xl) {
+      font-size: 40px !important;
+    }
+
+    @include respond-to-max(md) {
+      font-size: 32px !important;
+    }
   }
 
   &__price-uah {
@@ -115,6 +179,14 @@
 
   &__main-image {
     max-width: 800px;
+
+    @media screen and (max-width: 1780px) {
+      max-width: 500px;
+    }
+
+    @include respond-to-max(lg) {
+      max-width: 100%;
+    }
     width: 100%;
     overflow: hidden;
     border-radius: 12px;
@@ -158,6 +230,13 @@
 
   &__more-images-container {
     max-width: 800px;
+    @media screen and (max-width: 1780px) {
+      max-width: 500px;
+    }
+
+    @include respond-to-max(lg) {
+      display: none;
+    }
     width: 100%;
     display: flex;
     gap: 15.33px;
@@ -196,6 +275,11 @@
       padding-left: 50px;
       margin-top: 56px;
       width: 249px;
+
+      @include respond-to-max(md) {
+        width: 100%;
+        justify-content: center;
+      }
     }
   }
 
@@ -221,6 +305,10 @@
   &__characteristics {
     margin-top: 96px;
 
+    @include respond-to-max(md) {
+      margin-top: 64px;
+    }
+
     &-title {
       @include typography.desktop-sb2-28-b;
     }
@@ -230,6 +318,15 @@
       display: flex;
       gap: 70px;
       max-width: 806px;
+
+      @include respond-to-max(2xl) {
+        gap: 36px;
+      }
+
+      @include respond-to-max(md) {
+        flex-direction: column;
+        gap: 0;
+      }
     }
 
     &-list {
@@ -262,6 +359,10 @@
     position: absolute;
     bottom: -230px;
     left: -90px;
+
+    @include respond-to-max(lg) {
+      display: none;
+    }
   }
 
   &__vertical-line {
