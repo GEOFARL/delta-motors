@@ -518,7 +518,22 @@
     justify-content: center;
     gap: 109px;
 
+    @include respond-to-max(2xl) {
+      gap: 56px;
+    }
+
     @include layout.max-width;
+
+    max-width: 1640px !important;
+
+    @include respond-to-max(lg) {
+      flex-direction: column;
+
+      .cta-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
   }
 
   &__form-block {
@@ -534,6 +549,10 @@
 
     span {
       font-weight: 700;
+    }
+
+    @include respond-to-max(md) {
+      font-size: 32px !important;
     }
   }
 
@@ -556,11 +575,19 @@
 
       @include typography.desktop-bt2-16-r;
     }
+
+    @include respond-to-max(md) {
+      margin-top: 24px;
+    }
   }
 
   .cta-button {
     align-self: flex-start;
     margin-top: 56px;
+
+    @include respond-to-max(md) {
+      margin-top: 24px;
+    }
   }
 
   &__image-block {
@@ -571,12 +598,29 @@
     position: relative;
     border-radius: 12px;
 
+    @include respond-to-max(md) {
+      height: 300px;
+      flex: unset;
+    }
+
     img {
       position: relative;
       z-index: 1;
       top: -520px;
       width: 100%;
       height: auto;
+
+      @include respond-to-max(2xl) {
+        top: -250px;
+      }
+
+      @include respond-to-max(lg) {
+        top: 0;
+      }
+
+      @include respond-to-max(md) {
+        top: -160px;
+      }
     }
     &::after {
       content: "";
@@ -595,6 +639,24 @@
     top: 10px !important;
     left: 100px;
     z-index: 2 !important;
+
+    @include respond-to-max(2xl) {
+      top: 0 !important;
+      left: 0;
+
+      transform: scale(0.8);
+    }
+
+    @include respond-to-max(sm) {
+      top: -20px !important;
+      left: -43% !important;
+    }
+
+    @include respond-to-max(md) {
+      transform: scale(0.35);
+      top: -20px !important;
+      left: -3%;
+    }
   }
 
   &__contact-us {
@@ -602,6 +664,11 @@
     bottom: 20px;
     right: 0;
     z-index: 2 !important;
+
+    @include respond-to-max(md) {
+      transform: scale(0.65);
+      right: -100px;
+    }
   }
 
   &__vector-arrows-1 {
@@ -609,6 +676,12 @@
     left: 100px;
     z-index: 3 !important;
     transform: scale(1.4) rotate(180deg);
+
+    @include respond-to-max(md) {
+      transform: scale(0.8) rotate(180deg);
+      top: 80px !important;
+      left: 40px;
+    }
   }
 
   &__vector-arrows-2 {
