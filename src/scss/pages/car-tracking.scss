@@ -153,7 +153,12 @@
     left: -80px;
 
     @include respond-to-max(2xl) {
-      bottom: -340px;
+      bottom: -240px;
+      transform: scale(0.7);
+    }
+
+    @include respond-to-max(md) {
+      bottom: 10px;
     }
   }
 
@@ -217,6 +222,15 @@
   color: colors.$color-white;
   position: relative;
 
+  @include respond-to-max(lg) {
+    margin: -75px 0 80px 0;
+    padding: 34px 0 180px 0;
+  }
+  @include respond-to-max(lg) {
+    margin-top: -95px;
+    padding-bottom: 40px;
+  }
+
   &__bg-image {
     height: 571px;
     width: 100%;
@@ -238,6 +252,10 @@
       border-radius: 12px;
       z-index: 2;
     }
+
+    @include respond-to-max(lg) {
+      display: none;
+    }
   }
 
   &__bg-line {
@@ -247,6 +265,14 @@
     position: absolute;
     top: -40px;
     left: 50%;
+
+    @include respond-to-max(lg) {
+      top: -20px;
+    }
+
+    @include respond-to-max(md) {
+      top: 0;
+    }
   }
 
   &__container {
@@ -263,6 +289,19 @@
     top: -40px;
     left: calc(50% - 560px);
     z-index: -1;
+
+    @include respond-to-max(2xl) {
+      left: calc(50% - 400px);
+    }
+
+    @include respond-to-max(lg) {
+      top: -20px;
+    }
+
+    @include respond-to-max(md) {
+      top: -10px;
+      left: calc(50% - 320px);
+    }
   }
 
   &__rectangle-2 {
@@ -271,12 +310,30 @@
     left: -6%;
     width: 100%;
     z-index: -1;
+
+    @include respond-to-max(2xl) {
+      bottom: -14px;
+    }
+
+    @include respond-to-max(lg) {
+      display: none;
+    }
   }
 
   &__arrows {
     position: absolute;
     top: 13px;
     right: -110px;
+
+    @include respond-to-max(lg) {
+      transform: rotate(180deg) scale(0.8);
+      top: 3px;
+      right: 80px;
+    }
+
+    @include respond-to-max(md) {
+      transform: rotate(180deg) scale(0.7);
+    }
   }
 
   &__title {
@@ -289,8 +346,32 @@
     flex-direction: row-reverse;
     @include typography.desktop-h2-54-r;
 
-    span {
+    .bold {
       font-weight: 700;
+    }
+
+    @include respond-to-max(2xl) {
+      top: -230px;
+      left: 64px;
+    }
+
+    @include respond-to-max(lg) {
+      max-width: 380px;
+      top: -125px;
+
+      .auto {
+        display: none;
+      }
+
+      .mobile {
+        font-weight: 400;
+      }
+      font-size: 32px !important;
+    }
+
+    @include respond-to-max(md) {
+      left: 16px;
+      top: -135px;
     }
   }
 
@@ -306,6 +387,12 @@
     z-index: 1;
     bottom: -262px;
     left: 0;
+
+    @include respond-to-max(lg) {
+      transform: scale(0.4);
+      bottom: -94px;
+      left: -140px;
+    }
   }
 
   &__items {
@@ -316,6 +403,12 @@
     width: 100%;
     margin-bottom: 148px;
     padding-bottom: 40px;
+
+    @include respond-to-max(lg) {
+      flex-direction: column;
+      margin-bottom: 0;
+      padding-bottom: 16px;
+    }
   }
 
   .delivery-item {
@@ -324,9 +417,17 @@
     display: flex;
     align-items: center;
     gap: 16px;
-
     &:not(:last-child) {
       border-right: 1px solid #fafafa80;
+    }
+
+    @include respond-to-max(2xl) {
+      min-width: unset;
+    }
+
+    @include respond-to-max(lg) {
+      gap: 12px;
+      border-right: none !important;
     }
 
     &__content {
@@ -337,6 +438,17 @@
 
     &__icon {
       margin-bottom: 16px;
+
+      @include respond-to-max(2xl) {
+        display: none;
+      }
+
+      @include respond-to-max(lg) {
+        display: block;
+
+        width: 28px;
+        height: 28px;
+      }
     }
 
     &__title {
@@ -344,6 +456,11 @@
       max-width: 318px;
       text-align: left;
       @include typography.desktop-sb2-28-b;
+
+      @include respond-to-max(lg) {
+        margin-bottom: 8px;
+        max-width: unset;
+      }
     }
 
     &__text {
@@ -351,6 +468,10 @@
       text-align: left;
       color: colors.$color-light-grey;
       @include typography.desktop-bt1-18-r;
+
+      @include respond-to-max(lg) {
+        max-width: unset;
+      }
     }
   }
 
@@ -364,6 +485,10 @@
     &-text {
       max-width: 705px;
       @include typography.desktop-sb2-28-b;
+
+      @include respond-to-max(md) {
+        color: colors.$color-light-grey;
+      }
     }
   }
 
@@ -377,6 +502,11 @@
   .cta-button {
     width: 254px;
     justify-content: space-between;
+
+    @include respond-to-max(md) {
+      width: 100%;
+      justify-content: center;
+    }
   }
 }
 
