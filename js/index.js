@@ -20662,11 +20662,15 @@
 
 	  $(".service-item").each(function (index) {
 	    $(this).on("mouseenter", function () {
-	      if (isDesktop()) {
-	        $(".service-item").removeClass("active");
-	        $(this).addClass("active");
-	        updateMedia(index);
+	      if (!isDesktop()) return;
+
+	      if ($(this).hasClass("active")) {
+	        return;
 	      }
+
+	      $(".service-item").removeClass("active");
+	      $(this).addClass("active");
+	      updateMedia(index);
 	    });
 	  });
 	});
