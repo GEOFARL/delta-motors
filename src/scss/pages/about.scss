@@ -552,6 +552,12 @@
     @include respond-to-max(lg) {
       text-align: center;
     }
+
+    @include respond-to-max(md) {
+      span {
+        margin-left: 42px;
+      }
+    }
   }
 
   &__content {
