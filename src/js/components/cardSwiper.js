@@ -8,7 +8,7 @@ $(document).ready(function () {
     slidesPerView = 3,
     breakpoints
   ) => {
-    new Swiper(selector, {
+    const swiper = new Swiper(selector, {
       slidesPerView,
       spaceBetween: spaceBetween,
       navigation: {
@@ -23,7 +23,35 @@ $(document).ready(function () {
         },
         ...breakpoints,
       },
+      on: {
+        afterInit(swiperInstance) {
+          toggleNavigation(swiperInstance);
+        },
+        slideChange(swiperInstance) {
+          toggleNavigation(swiperInstance);
+        },
+        resize(swiperInstance) {
+          toggleNavigation(swiperInstance);
+        },
+      },
     });
+
+    function toggleNavigation(swiper) {
+      const $prev = $(swiper.params.navigation.prevEl);
+      const $next = $(swiper.params.navigation.nextEl);
+
+      if (swiper.isBeginning) {
+        $prev.hide();
+      } else {
+        $prev.show();
+      }
+
+      if (swiper.isEnd) {
+        $next.hide();
+      } else {
+        $next.show();
+      }
+    }
   };
 
   initSwiper(".available-cars-swiper", 20, 3, {
