@@ -1,28 +1,6 @@
 @use "../../base/colors";
 @use "../../base/typography";
 
-.custom-select {
-  display: inline-block;
-  position: relative;
-  border: 1px solid colors.$color-accent-1;
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: colors.$color-white;
-  width: 230px;
-}
-
-.custom-select select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: transparent;
-  border: none;
-  padding: 11px 40px 11px 18px;
-  width: 100%;
-  cursor: pointer;
-  @include typography.desktop-bt2-16-sb;
-}
-
 .custom-select::after {
   content: "";
   position: absolute;
@@ -34,4 +12,64 @@
   border-bottom: 2px solid #111017;
   transform: translateY(calc(-50% - 2px)) rotate(45deg);
   pointer-events: none;
+}
+
+.custom-select {
+  position: relative;
+  width: 250px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  &__current {
+    font-size: 16px;
+    color: #111017;
+  }
+
+  &__arrow {
+    transition: transform 0.3s ease;
+  }
+
+  &__list {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none;
+    flex-direction: column;
+    border-radius: 0 0 6px 6px;
+    z-index: 20;
+  }
+
+  &__option {
+    padding: 10px 14px;
+    cursor: pointer;
+
+    &:hover {
+      background: #f1f1f1;
+    }
+  }
+
+  &.open &__list {
+    display: flex;
+  }
+
+  &.open &__arrow {
+    transform: rotate(180deg);
+  }
+
+  &.open::after {
+    transform: translateY(calc(-50% + 3px)) rotate(225deg);
+  }
 }

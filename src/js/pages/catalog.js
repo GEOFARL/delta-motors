@@ -29,3 +29,27 @@ function updateCatalogPage() {
     $tabs.eq(1).addClass("active");
   }
 }
+
+$(document).ready(function () {
+  $(".custom-select__header").on("click", function (e) {
+    e.stopPropagation();
+    $(".custom-select").not($(this).parent()).removeClass("open");
+    $(this).parent().toggleClass("open");
+  });
+
+  $(".custom-select__option").on("click", function (e) {
+    e.stopPropagation();
+    const selectedText = $(this).text();
+    const selectedValue = $(this).data("value");
+
+    const select = $(this).closest(".custom-select");
+    select.find(".custom-select__current").text(selectedText);
+    select.removeClass("open");
+
+    console.log("Selected value:", selectedValue);
+  });
+
+  $(document).on("click", function () {
+    $(".custom-select").removeClass("open");
+  });
+});
