@@ -20512,14 +20512,18 @@
 	    slidesPerView = 3,
 	    breakpoints
 	  ) => {
+	    const $container = $(selector);
+	    const $prev = $container.find(".swiper-button-prev");
+	    const $next = $container.find(".swiper-button-next");
+
 	    new Swiper(selector, {
 	      slidesPerView,
-	      spaceBetween: spaceBetween,
-	      navigation: {
-	        nextEl: ".swiper-button-next",
-	        prevEl: ".swiper-button-prev",
-	      },
+	      spaceBetween,
 	      loop: false,
+	      navigation: {
+	        nextEl: $next[0],
+	        prevEl: $prev[0],
+	      },
 	      breakpoints: {
 	        1536: {
 	          slidesPerView: slidesPerView,
@@ -20541,67 +20545,44 @@
 	    });
 
 	    function toggleNavigation(swiper) {
-	      const $prev = $(swiper.params.navigation.prevEl);
-	      const $next = $(swiper.params.navigation.nextEl);
+	      const $prevButton = $(swiper.params.navigation.prevEl);
+	      const $nextButton = $(swiper.params.navigation.nextEl);
 
 	      if (swiper.isBeginning) {
-	        $prev.hide();
+	        $prevButton.hide();
 	      } else {
-	        $prev.show();
+	        $prevButton.show();
 	      }
 
 	      if (swiper.isEnd) {
-	        $next.hide();
+	        $nextButton.hide();
 	      } else {
-	        $next.show();
+	        $nextButton.show();
 	      }
 	    }
 	  };
 
 	  initSwiper(".available-cars-swiper", 20, 3, {
-	    350: {
-	      slidesPerView: 1,
-	      spaceBetween: 20,
-	    },
-	    1024: {
-	      slidesPerView: 2,
-	      spaceBetween: 20,
-	    },
+	    350: { slidesPerView: 1, spaceBetween: 20 },
+	    1024: { slidesPerView: 2, spaceBetween: 20 },
 	  });
+
 	  initSwiper(".auction-cars-swiper", 20, 3, {
-	    350: {
-	      slidesPerView: 1,
-	      spaceBetween: 20,
-	    },
-	    1024: {
-	      slidesPerView: 2,
-	      spaceBetween: 20,
-	    },
+	    350: { slidesPerView: 1, spaceBetween: 20 },
+	    1024: { slidesPerView: 2, spaceBetween: 20 },
 	  });
+
 	  initSwiper(".cars-for-u-swiper", 20, 2, {
-	    350: {
-	      slidesPerView: 1,
-	      spaceBetween: 20,
-	    },
-	    1024: {
-	      slidesPerView: 2,
-	      spaceBetween: 20,
-	    },
-	    1680: {
-	      slidesPerView: 3,
-	      spaceBetween: 20,
-	    },
+	    350: { slidesPerView: 1, spaceBetween: 20 },
+	    1024: { slidesPerView: 2, spaceBetween: 20 },
+	    1680: { slidesPerView: 3, spaceBetween: 20 },
 	  });
+
 	  initSwiper(".main-image-swiper", 40, 1);
+
 	  initSwiper(".testimonials-swiper", 28, 3, {
-	    350: {
-	      slidesPerView: 1,
-	      spaceBetween: 40,
-	    },
-	    768: {
-	      slidesPerView: 2,
-	      spaceBetween: 40,
-	    },
+	    350: { slidesPerView: 1, spaceBetween: 40 },
+	    768: { slidesPerView: 2, spaceBetween: 40 },
 	  });
 	});
 
