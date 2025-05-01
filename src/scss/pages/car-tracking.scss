@@ -573,6 +573,20 @@
       align-items: center;
       gap: 6px;
 
+      .mobile-phone {
+        display: none;
+      }
+
+      @include respond-to-max(md) {
+        .mobile-phone {
+          display: block;
+        }
+
+        .desktop-phone {
+          display: none;
+        }
+      }
+
       @include typography.desktop-bt2-16-r;
     }
 
