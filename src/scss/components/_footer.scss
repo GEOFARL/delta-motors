@@ -11,6 +11,10 @@
   position: relative;
   overflow: hidden;
 
+  @include respond-to-max(2xl) {
+    padding: 72px 72px 0;
+  }
+
   @include respond-to-max(lg) {
     padding: 40px 72px 0;
   }
@@ -31,6 +35,7 @@
     & > div {
       display: flex;
       justify-content: space-between;
+      gap: 20px;
     }
 
     @include respond-to-max(lg) {
@@ -45,6 +50,10 @@
   &__nav-container {
     display: flex;
     gap: 132px;
+
+    @include respond-to-max(2xl) {
+      gap: 40px;
+    }
 
     @include respond-to-max(md) {
       flex-direction: column;
@@ -68,6 +77,10 @@
   &__nav {
     display: flex;
     gap: 132px;
+
+    @include respond-to-max(2xl) {
+      gap: 40px;
+    }
 
     @include respond-to-max(md) {
       flex-direction: column;
