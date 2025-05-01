@@ -190,6 +190,9 @@
       &:focus {
         border-color: #3b5bff;
       }
+      &:focus-visible {
+        outline: none;
+      }
 
       &.has-error {
         border-color: #e53935;
