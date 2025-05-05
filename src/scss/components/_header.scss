@@ -8,7 +8,7 @@
   padding: 12.5px;
   border-bottom: 1px solid #c4c4c466;
   position: sticky;
-  background: colors.$color-accent-dark;
+  background: colors.$color-white;
   z-index: 9999999;
   top: 0;
 
@@ -30,7 +30,6 @@
   @include respond-to-max(lg) {
     position: sticky;
     top: 0;
-    background-color: colors.$color-accent-dark;
     z-index: 9999;
 
     .cta-button {
@@ -59,7 +58,7 @@
 
     a {
       text-decoration: none;
-      color: colors.$color-white;
+      color: colors.$color-txt;
 
       &:hover {
         text-decoration: underline;
