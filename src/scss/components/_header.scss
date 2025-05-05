@@ -61,7 +61,7 @@
       color: colors.$color-txt;
 
       &:hover {
-        text-decoration: underline;
+        color: colors.$color-accent-2;
       }
     }
   }
