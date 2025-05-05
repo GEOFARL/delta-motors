@@ -20,6 +20,7 @@
   &-swiper {
     width: 100%;
     max-width: 1250px;
+    margin-top: -30px;
     position: relative;
     z-index: 2;
 
@@ -204,14 +205,30 @@
   }
 
   .testimonial-card {
-    background: colors.$color-white;
-    border-radius: 12px;
-    padding: 40px 42px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
     height: 100%;
+
+    &__content {
+      background: colors.$color-white;
+      border-radius: 12px;
+      padding: 40px 42px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - 15px);
+      gap: 16px;
+    }
+
+    &__bg-rect {
+      width: 40%;
+      height: 15px;
+      border-radius: 12px;
+      background-color: colors.$color-accent-2;
+      position: relative;
+      z-index: 0;
+      top: 9px;
+      right: 15px;
+      margin-left: auto;
+    }
 
     &__header {
       display: flex;
