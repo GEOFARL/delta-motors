@@ -6,6 +6,14 @@
 .form-section {
   margin-bottom: 180px;
 
+  &__protectors {
+    position: absolute !important;
+    top: -140px !important;
+    right: -330px !important;
+    z-index: 2 !important;
+    transform: rotate(100deg) scale(0.6);
+  }
+
   &__container {
     display: flex;
     gap: 110px;
