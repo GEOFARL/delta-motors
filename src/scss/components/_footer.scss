@@ -99,7 +99,7 @@
         color: colors.$color-white;
 
         &:hover {
-          text-decoration: underline;
+          color: colors.$color-blue-light;
         }
 
         @include typography.desktop-bt2-16-r;
@@ -131,6 +131,20 @@
     img {
       width: 32px;
       height: 32px;
+    }
+
+    .link-hover {
+      display: none;
+    }
+
+    & a:hover {
+      .link-hover {
+        display: block;
+      }
+
+      .link-normal {
+        display: none;
+      }
     }
   }
 
