@@ -172,3 +172,28 @@ body.menu-open footer {
     width: 90%;
   }
 }
+
+.contact-button {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background-color: colors.$color-accent-2;
+  border-radius: 50%;
+  cursor: pointer;
+
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 9999;
+
+  &:hover {
+    background-color: rgba(colors.$color-accent-2, 0.8);
+  }
+
+  @include respond-to-max(md) {
+    display: flex;
+  }
+}
