@@ -6,6 +6,20 @@
 .form-section {
   margin-bottom: 180px;
 
+  &__image-block-wrapper {
+    position: relative;
+  }
+
+  &__blue-rectangle {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    bottom: 2px;
+    left: -7.5px;
+    border-radius: 12px;
+    background-color: colors.$color-accent-2;
+  }
+
   &__protectors {
     position: absolute !important;
     top: -140px !important;
