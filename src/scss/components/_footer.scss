@@ -71,6 +71,11 @@
       display: flex;
       gap: 6px;
       align-items: center;
+
+      span {
+        color: colors.$color-white !important;
+        text-transform: none !important;
+      }
     }
   }
 
