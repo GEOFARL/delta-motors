@@ -75,6 +75,11 @@
       span {
         color: colors.$color-white !important;
         text-transform: none !important;
+
+        a {
+          color: colors.$color-white !important;
+          text-transform: none !important;
+        }
       }
     }
   }
