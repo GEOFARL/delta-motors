@@ -259,6 +259,7 @@
     margin-left: -35px;
     position: relative;
     z-index: 2;
+    list-style: none;
 
     @include respond-to-max(2xl) {
       margin-left: -75px;
@@ -269,10 +270,18 @@
     }
 
     .service-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       color: colors.$color-white;
+      &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &__body {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.6s ease, margin 0.6s ease;
+      }
 
       &__content {
         display: flex;
@@ -323,6 +332,18 @@
 
           img {
             transform: unset;
+          }
+        }
+      }
+
+      &.active {
+        @include respond-to-max(md) {
+          .service-item__content {
+            color: colors.$color-blue-light;
+          }
+
+          img {
+            transform: rotate(-90deg);
           }
         }
       }
