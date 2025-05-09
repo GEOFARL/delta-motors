@@ -1,5 +1,6 @@
 @use "../base/colors";
 @use "../base/typography";
+@use "../base/breakpoints" as *;
 
 .cookie-overlay {
   position: fixed;
@@ -24,6 +25,24 @@
   max-width: 746px;
   z-index: 9999999999999999;
   @include typography.desktop-bt2-16-r;
+
+  @include respond-to-max(md) {
+    max-width: 343px;
+    width: 100%;
+    bottom: 16px;
+    right: 16px;
+    flex-direction: column;
+    padding: 12px;
+    align-items: flex-start;
+
+    p {
+      max-width: 280px;
+    }
+
+    &__accept {
+      width: 100%;
+    }
+  }
 }
 
 .cookie-consent.show {
