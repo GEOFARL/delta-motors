@@ -812,6 +812,10 @@
     z-index: 1;
     left: 0;
 
+    &--mobile {
+      display: none;
+    }
+
     @include respond-to-max(2xl) {
       left: -810px;
     }
@@ -1162,5 +1166,22 @@
   &__title {
     @include typography.desktop-sb2-28-b;
     max-width: 500px;
+  }
+}
+
+.advantages__line {
+  @include respond-to-max(md) {
+    &--mobile {
+      display: block;
+      left: unset;
+      transform: unset;
+      bottom: -60px;
+      right: 16px;
+      clip-path: inset(50px 0 0 0);
+    }
+
+    &--desktop {
+      display: none;
+    }
   }
 }
