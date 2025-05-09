@@ -1,5 +1,6 @@
 @use "./colors";
 @use "./layout";
+@use "./breakpoints" as *;
 
 * {
   margin: 0;
@@ -35,4 +36,54 @@ main {
 .swiper-button-next,
 .swiper-button-prev {
   z-index: 999 !important;
+}
+
+.swiper-pagination-bullet {
+  display: block;
+  background-color: colors.$color-dark-grey;
+}
+
+.swiper-pagination {
+  min-height: 12px;
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  transition: all 0.3s ease;
+  margin: 0 3px;
+  border-radius: 2px;
+}
+
+.bullet-distance-0 {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+}
+
+.bullet-distance-1 {
+  width: 10px;
+  height: 10px;
+  opacity: 0.6;
+}
+
+.bullet-distance-2 {
+  width: 8px;
+  height: 8px;
+  opacity: 0.3;
+}
+
+.bullet-distance-far {
+  width: 6px;
+  height: 6px;
+  opacity: 0.1;
+}
+
+@include respond-to-max(md) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
 }

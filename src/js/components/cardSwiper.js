@@ -1,6 +1,29 @@
 import $ from "jquery";
 import Swiper from "swiper/bundle";
 
+const stylePaginationBullets = (swiperInstance) => {
+  const bullets = swiperInstance.pagination.bullets;
+  bullets.forEach((bullet, index) => {
+    const distance = Math.abs(swiperInstance.realIndex - index);
+    bullet.classList.remove(
+      "bullet-distance-0",
+      "bullet-distance-1",
+      "bullet-distance-2",
+      "bullet-distance-far"
+    );
+
+    if (distance === 0) {
+      bullet.classList.add("bullet-distance-0");
+    } else if (distance === 1) {
+      bullet.classList.add("bullet-distance-1");
+    } else if (distance === 2) {
+      bullet.classList.add("bullet-distance-2");
+    } else {
+      bullet.classList.add("bullet-distance-far");
+    }
+  });
+};
+
 $(document).ready(function () {
   const initSwiper = (
     selector,
@@ -20,6 +43,10 @@ $(document).ready(function () {
         nextEl: $next[0],
         prevEl: $prev[0],
       },
+      pagination: {
+        el: $container.find(".swiper-pagination")[0],
+        clickable: true,
+      },
       breakpoints: {
         1536: {
           slidesPerView: slidesPerView,
@@ -30,9 +57,11 @@ $(document).ready(function () {
       on: {
         afterInit(swiperInstance) {
           toggleNavigation(swiperInstance);
+          stylePaginationBullets(swiperInstance);
         },
         slideChange(swiperInstance) {
           toggleNavigation(swiperInstance);
+          stylePaginationBullets(swiperInstance);
         },
         resize(swiperInstance) {
           toggleNavigation(swiperInstance);
@@ -41,6 +70,7 @@ $(document).ready(function () {
     });
 
     function toggleNavigation(swiper) {
+      if (window.matchMedia("(max-width: 768px)").matches) return;
       const $prevButton = $(swiper.params.navigation.prevEl);
       const $nextButton = $(swiper.params.navigation.nextEl);
 
