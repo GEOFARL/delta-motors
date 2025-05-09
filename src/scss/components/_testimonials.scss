@@ -127,6 +127,12 @@
     @include respond-to-max(md) {
       max-width: 320px;
     }
+
+    @include respond-to-max(sm) {
+      .desktop {
+        display: none;
+      }
+    }
   }
 
   &__arrows {
