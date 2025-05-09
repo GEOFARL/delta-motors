@@ -20546,6 +20546,29 @@
 	const modules = [Virtual, Keyboard, Mousewheel, Navigation, Pagination, Scrollbar, Parallax, Zoom, Controller, A11y, History, HashNavigation, Autoplay, Thumb, freeMode, Grid, Manipulation, EffectFade, EffectCube, EffectFlip, EffectCoverflow, EffectCreative, EffectCards];
 	Swiper.use(modules);
 
+	const stylePaginationBullets = (swiperInstance) => {
+	  const bullets = swiperInstance.pagination.bullets;
+	  bullets.forEach((bullet, index) => {
+	    const distance = Math.abs(swiperInstance.realIndex - index);
+	    bullet.classList.remove(
+	      "bullet-distance-0",
+	      "bullet-distance-1",
+	      "bullet-distance-2",
+	      "bullet-distance-far"
+	    );
+
+	    if (distance === 0) {
+	      bullet.classList.add("bullet-distance-0");
+	    } else if (distance === 1) {
+	      bullet.classList.add("bullet-distance-1");
+	    } else if (distance === 2) {
+	      bullet.classList.add("bullet-distance-2");
+	    } else {
+	      bullet.classList.add("bullet-distance-far");
+	    }
+	  });
+	};
+
 	$(document).ready(function () {
 	  const initSwiper = (
 	    selector,
@@ -20565,6 +20588,10 @@
 	        nextEl: $next[0],
 	        prevEl: $prev[0],
 	      },
+	      pagination: {
+	        el: $container.find(".swiper-pagination")[0],
+	        clickable: true,
+	      },
 	      breakpoints: {
 	        1536: {
 	          slidesPerView: slidesPerView,
@@ -20575,9 +20602,11 @@
 	      on: {
 	        afterInit(swiperInstance) {
 	          toggleNavigation(swiperInstance);
+	          stylePaginationBullets(swiperInstance);
 	        },
 	        slideChange(swiperInstance) {
 	          toggleNavigation(swiperInstance);
+	          stylePaginationBullets(swiperInstance);
 	        },
 	        resize(swiperInstance) {
 	          toggleNavigation(swiperInstance);
@@ -20586,6 +20615,7 @@
 	    });
 
 	    function toggleNavigation(swiper) {
+	      if (window.matchMedia("(max-width: 768px)").matches) return;
 	      const $prevButton = $(swiper.params.navigation.prevEl);
 	      const $nextButton = $(swiper.params.navigation.nextEl);
 
