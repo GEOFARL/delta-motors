@@ -4,13 +4,39 @@
 @use "../base/colors";
 @use "../base/layout";
 
+.header-logo--scrolled {
+  display: none;
+}
+
 .header {
   padding: 12.5px;
   border-bottom: 1px solid #c4c4c466;
   position: sticky;
-  background: colors.$color-white;
   z-index: 9999999;
   top: 0;
+
+  &.scrolled {
+    background: colors.$color-white;
+
+    .header-logo img {
+      display: none;
+    }
+
+    .header-logo--scrolled {
+      display: block !important;
+      width: 124px;
+    }
+
+    .burger {
+      img {
+        display: none;
+      }
+
+      .scrolled {
+        display: block;
+      }
+    }
+  }
 
   .burger {
     display: none;
@@ -18,8 +44,9 @@
     border: none;
     appearance: none;
     cursor: pointer;
-    img {
-      transform: scale(1.4);
+
+    .scrolled {
+      display: none;
     }
 
     @include respond-to-max(lg) {

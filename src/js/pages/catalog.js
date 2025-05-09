@@ -1,12 +1,14 @@
 import $ from "jquery";
 import { initDropdown } from "../components/dropdown";
 import { initMobileMenu } from "../components/mobileMenu";
+import { initHeader } from "../components/header";
 
 $(function () {
   console.log("Catalog page initialized");
   updateCatalogPage();
   initMobileMenu();
   initDropdown();
+  initHeader();
   $(window).on("hashchange", updateCatalogPage);
 });
 

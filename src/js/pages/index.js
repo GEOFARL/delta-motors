@@ -7,6 +7,7 @@ import { initSmartForm } from "../components/form";
 import { initModal } from "../components/modal";
 import { initCookieConsent } from "../components/cookieConsent";
 import { initMobileMenu } from "../components/mobileMenu";
+import { initHeader } from "../components/header";
 
 $(function () {
   initContact();
@@ -23,6 +24,8 @@ $(function () {
     contentSelector: ".faq-item__content",
     allowMultiple: false,
   });
+
+  initHeader();
 
   console.log("Index page initialized");
 });
