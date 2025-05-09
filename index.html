@@ -608,7 +608,8 @@
         <img class="advantages__vector-arrows" src="assets/icons/graphic-elements/vector-arrows.svg" alt="vector arrows" />
       </div>
 
-      <img src="assets/icons/line-vectors/our-benefits.svg" alt="Our benefits" class="advantages__line" />
+      <img src="assets/icons/line-vectors/our-benefits.svg" alt="Our benefits" class="advantages__line advantages__line--desktop" />
+      <img src="assets/icons/line-vectors/our-benefits-mobile.svg" alt="Our benefits" class="advantages__line advantages__line--mobile" />
       <div class="advantages__bg-image"></div>
       <img src="assets/icons/layout/rectangle-2.svg" alt="Rectangle" class="advantages__rectangle" />
       <img src="assets/icons/layout/rectangle-3.svg" alt="Rectangle" class="advantages__rectangle-2" />
@@ -945,7 +946,7 @@
       </div>
     </section>
 
-    <div class="modal-overlay">
+    <div class="modal-overlay" id="contact-modal">
       <div class="modal">
         <img src="assets/icons/graphic-elements/vector-arrows-6.svg" alt="vector arrows" class="modal__vector-arrows" />
 
@@ -985,6 +986,42 @@
               alt="vector arrows"
             />
           </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal-overlay" id="success-modal">
+      <div class="modal">
+        <img src="assets/icons/graphic-elements/vector-arrows-6.svg" alt="vector arrows" class="modal__vector-arrows" />
+        <img src="assets/icons/graphic-elements/delta-motors-2.svg" alt="delta motors" class="modal__delta-motors" />
+
+        <button class="modal__close"><img alt="close" src="assets/icons/component-icons/x-black.svg" /></button>
+
+        <div class="modal__content">
+          <img src="assets/icons/component-icons/blue-checkmarks.svg" alt="blue checkmarks" />
+
+          <div class="modal__content-body">
+            <h3 class="modal__content-title">Дякуємо за вашу заявку!</h3>
+            <p class="modal__content-subtitle">Наш менеджер звʼяжеться з вами найближчим часом!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="failure-modal">
+      <div class="modal">
+        <img src="assets/icons/graphic-elements/vector-arrows-6.svg" alt="vector arrows" class="modal__vector-arrows" />
+        <img src="assets/icons/graphic-elements/delta-motors-2.svg" alt="delta motors" class="modal__delta-motors" />
+
+        <button class="modal__close"><img alt="close" src="assets/icons/component-icons/x-black.svg" /></button>
+
+        <div class="modal__content">
+          <img src="assets/icons/component-icons/error-email.svg" alt="blue checkmarks" />
+
+          <div class="modal__content-body">
+            <h3 class="modal__content-title">Щось пішло не так :(</h3>
+            <p class="modal__content-subtitle">На жаль форму не вдалося надіслати. Будь-ласка, спробуйте ще раз.</p>
+          </div>
         </div>
       </div>
     </div>
