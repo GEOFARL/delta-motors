@@ -1,4 +1,5 @@
 @use "../../base/colors";
+@use "../../base/breakpoints" as *;
 
 .modal-overlay {
   position: fixed;
@@ -29,6 +30,20 @@
   max-width: 746px;
   width: 100%;
   position: relative;
+
+  @include respond-to-max(md) {
+    padding: 56px 16px;
+
+    &__close {
+      top: 16px !important;
+      right: 16px !important;
+    }
+
+    .cta-button {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+  }
 }
 
 .modal__close {
