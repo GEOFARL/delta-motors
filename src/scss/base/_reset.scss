@@ -46,9 +46,13 @@ main {
 .swiper-pagination {
   min-height: 12px;
   margin-top: 16px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
+
+  @include respond-to-max(md) {
+    display: flex;
+  }
 }
 
 .swiper-pagination-bullet {
