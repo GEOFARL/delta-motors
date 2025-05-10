@@ -20875,6 +20875,13 @@
 	      "#open-contact-modal",
 	      "#open-contact-modal-1",
 	      "#open-contact-modal-2",
+	      "#open-contact-modal-3",
+	      "#open-contact-modal-4",
+	      "#open-contact-modal-5",
+	      "#open-contact-modal-6",
+	      "#open-contact-modal-7",
+	      "#open-contact-modal-8",
+	      "#open-contact-modal-9",
 	    ],
 	  });
 	  initCookieConsent();
