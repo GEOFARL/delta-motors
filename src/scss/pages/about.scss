@@ -367,6 +367,10 @@
     @include respond-to-max(lg) {
       top: -20px;
     }
+
+    @include respond-to-max(md) {
+      clip-path: inset(0 0 120px 0);
+    }
   }
 
   &__rectangle-2 {
