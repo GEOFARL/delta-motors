@@ -647,6 +647,14 @@
     flex-direction: row-reverse;
     @include typography.desktop-h2-54-r;
 
+    .mobile {
+      font-weight: 400;
+
+      @include respond-to-max(md) {
+        margin-right: 30px;
+      }
+    }
+
     @include respond-to-max(2xl) {
       img {
         display: none;
@@ -666,7 +674,7 @@
 
       .advantages__arrows {
         display: block;
-        transform: scale(0.8);
+        transform: scale(0.7);
       }
     }
 
@@ -902,6 +910,10 @@
 
     @include respond-to-max(2xl) {
       left: 25%;
+    }
+
+    @include respond-to-max(md) {
+      left: 33%;
     }
 
     @include respond-to-max(md) {
