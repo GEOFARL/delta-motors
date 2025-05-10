@@ -691,6 +691,19 @@
       justify-content: space-between;
       color: colors.$color-white;
 
+      &__title-mobile {
+        display: none;
+      }
+
+      @include respond-to-max(md) {
+        &__title {
+          display: none;
+        }
+        &__title-mobile {
+          display: block;
+        }
+      }
+
       &__content {
         display: flex;
         align-items: center;
