@@ -184,7 +184,9 @@
     }
 
     @include respond-to-max(md) {
-      gap: 12px;
+      height: 97px;
+      gap: 18px;
+      align-items: center;
     }
   }
 
@@ -209,6 +211,16 @@
 
       @include respond-to-max(md) {
         font-size: 14px !important;
+        display: none;
+      }
+    }
+
+    .numbers-label-mobile {
+      display: none;
+
+      @include respond-to-max(md) {
+        display: block;
+        font-weight: 600;
       }
     }
 
@@ -218,6 +230,13 @@
 
     @include respond-to-max(md) {
       min-width: unset;
+      align-items: start;
+    }
+
+    @media screen and (max-width: 400px) {
+      &:first-child {
+        margin-right: -20px;
+      }
     }
   }
 
@@ -226,6 +245,12 @@
     width: 1px;
     background-color: colors.$color-accent-1;
     flex-shrink: 0;
+
+    @include respond-to-max(md) {
+      width: 0.5px;
+      height: 64px;
+      background-color: colors.$color-blue-light;
+    }
   }
 
   &__vector-arrows {
