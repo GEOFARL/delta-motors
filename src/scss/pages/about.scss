@@ -536,6 +536,10 @@
       @include typography.desktop-sb1-24-sb;
     }
 
+    .mobile {
+      display: none;
+    }
+
     @include respond-to-max(md) {
       flex-direction: row;
       align-items: center;
@@ -549,6 +553,11 @@
       img {
         width: 32px;
         height: 32px;
+        display: none;
+      }
+
+      .mobile {
+        display: block;
       }
     }
   }
