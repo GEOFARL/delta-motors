@@ -13,7 +13,11 @@ $(function () {
   initContact();
   initSmartForm();
   initModal({
-    openModalSelector: "#open-contact-modal",
+    openModalSelectors: [
+      "#open-contact-modal",
+      "#open-contact-modal-1",
+      "#open-contact-modal-2",
+    ],
   });
   initCookieConsent();
   initMobileMenu();

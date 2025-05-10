@@ -1,8 +1,12 @@
 import $ from "jquery";
 
-export const initModal = ({ openModalSelector }) => {
-  $(openModalSelector).on("click", function () {
-    $("#contact-modal").addClass("active");
+export const initModal = ({ openModalSelectors }) => {
+  openModalSelectors.forEach((openModalSelector) => {
+    $(openModalSelector).on("click", function () {
+      $("#contact-modal").addClass("active");
+      $(".mobile-menu").removeClass("open");
+      $("body").removeClass("menu-open");
+    });
   });
 
   $(".modal__close, .modal-overlay").on("click", function (e) {
