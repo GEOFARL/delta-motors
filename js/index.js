@@ -20795,9 +20795,13 @@
 	  });
 	}
 
-	const initModal = ({ openModalSelector }) => {
-	  $(openModalSelector).on("click", function () {
-	    $("#contact-modal").addClass("active");
+	const initModal = ({ openModalSelectors }) => {
+	  openModalSelectors.forEach((openModalSelector) => {
+	    $(openModalSelector).on("click", function () {
+	      $("#contact-modal").addClass("active");
+	      $(".mobile-menu").removeClass("open");
+	      $("body").removeClass("menu-open");
+	    });
 	  });
 
 	  $(".modal__close, .modal-overlay").on("click", function (e) {
@@ -20867,7 +20871,11 @@
 	  initContact();
 	  initSmartForm();
 	  initModal({
-	    openModalSelector: "#open-contact-modal",
+	    openModalSelectors: [
+	      "#open-contact-modal",
+	      "#open-contact-modal-1",
+	      "#open-contact-modal-2",
+	    ],
 	  });
 	  initCookieConsent();
 	  initMobileMenu();
