@@ -876,3 +876,9 @@
     padding-bottom: 80px;
   }
 }
+
+@include respond-to-max(md) {
+  .testimonials__line-vector {
+    bottom: 30px;
+  }
+}
