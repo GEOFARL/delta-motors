@@ -1,4 +1,5 @@
 @use "../base/reset";
+@use "../base/breakpoints" as *;
 @use "../components//ui/select";
 @use "../components//ui/dropdown";
 @use "../components//ui/card";
@@ -15,6 +16,34 @@
   background-color: colors.$color-accent-dark;
   z-index: 1;
 
+  &-mobile {
+    display: none;
+    position: absolute;
+    top: 12px;
+    left: -20px;
+
+    @include respond-to-max(md) {
+      display: block;
+    }
+  }
+
+  .blue-rect {
+    position: absolute;
+    bottom: 8px;
+    left: 164px;
+    z-index: -1;
+  }
+
+  .arrows {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+  }
+
+  @include respond-to-max(md) {
+    height: 280px;
+  }
+
   .bottom-block {
     height: 32px;
     width: 50%;
@@ -28,6 +57,10 @@
       top: -317px;
       right: -960px;
     }
+
+    @include respond-to-max(md) {
+      display: none;
+    }
   }
 
   &__text {
@@ -37,6 +70,13 @@
 
     img {
       transform: rotate(180deg);
+    }
+
+    @include respond-to-max(md) {
+      gap: 16px;
+      img {
+        transform: rotate(0deg) scale(0.75);
+      }
     }
   }
 
@@ -62,6 +102,10 @@
       flex-direction: column;
       gap: 24px;
     }
+
+    @include respond-to-max(md) {
+      padding-top: 125px;
+    }
   }
 
   &__protectors-1 {
@@ -69,6 +113,9 @@
     position: absolute;
     top: -450px;
     left: -450px;
+    @include respond-to-max(md) {
+      display: none;
+    }
   }
 
   &__protectors-2 {
@@ -76,6 +123,10 @@
     position: absolute;
     top: -440px;
     right: -570px;
+    @include respond-to-max(md) {
+      top: -360px;
+      clip-path: inset(0 430px 0 0);
+    }
   }
 
   &__breadcrumbs {
@@ -156,6 +207,14 @@
   .car-card {
     max-width: 420px;
   }
+
+  @include respond-to-max(2xl) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to-max(lg) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .pagination {
@@ -198,4 +257,10 @@
 
 .pagination__pages button.active {
   color: colors.$color-accent-1;
+}
+
+@include respond-to-max(lg) {
+  .custom-dropdown {
+    width: 330px;
+  }
 }
