@@ -154,6 +154,7 @@ body.menu-open footer {
     position: absolute;
     top: 132px;
     left: 40px;
+    z-index: -1;
   }
 
   &__vector-arrows {
