@@ -240,6 +240,27 @@
   color: colors.$color-white;
   position: relative;
 
+  &__mobile {
+    display: none;
+
+    .rect {
+      clip-path: inset(0 0 810px 0);
+    }
+
+    .blue-rect {
+      position: absolute;
+      top: 14px;
+      right: 20px;
+    }
+
+    @include respond-to-max(md) {
+      display: block;
+      position: absolute;
+      top: -20px;
+      left: 0;
+    }
+  }
+
   @include respond-to-max(md) {
     background-image: url("../assets/images/dark-grey-car.jpeg");
     background-size: cover;
@@ -352,6 +373,7 @@
       top: -10px;
       left: calc(50% - 320px);
       clip-path: inset(0 0 470px 0);
+      display: none;
     }
   }
 
@@ -422,7 +444,7 @@
 
     @include respond-to-max(md) {
       left: 16px;
-      top: -135px;
+      top: -145px;
     }
   }
 
