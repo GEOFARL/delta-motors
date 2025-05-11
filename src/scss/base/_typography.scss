@@ -216,3 +216,7 @@
     font-size: 40px;
   }
 }
+
+@mixin mobile-bt2-14-b {
+  @include text-style("Wix Madefor Display", 700, 14px, 140%, 0);
+}
