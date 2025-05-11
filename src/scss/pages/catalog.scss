@@ -310,7 +310,9 @@
   gap: 12px;
 
   @include respond-to-max(md) {
-    display: none;
+    .pagination__pages button:nth-child(n + 7) {
+      display: none;
+    }
   }
 }
 
