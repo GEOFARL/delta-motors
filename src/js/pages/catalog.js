@@ -2,6 +2,7 @@ import $ from "jquery";
 import { initDropdown } from "../components/dropdown";
 import { initMobileMenu } from "../components/mobileMenu";
 import { initHeader } from "../components/header";
+import { initModal } from "../components/modal";
 
 $(function () {
   console.log("Catalog page initialized");
@@ -9,6 +10,9 @@ $(function () {
   initMobileMenu();
   initDropdown();
   initHeader();
+  initModal({
+    openModalSelectors: ["#open-filters"],
+  });
   $(window).on("hashchange", updateCatalogPage);
 });
 

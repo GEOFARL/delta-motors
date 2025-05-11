@@ -220,3 +220,7 @@
 @mixin mobile-bt2-14-b {
   @include text-style("Wix Madefor Display", 700, 14px, 140%, 0);
 }
+
+@mixin mobile-sb2-10 {
+  @include text-style("Arimo", 700, 20px, 140%, 0);
+}

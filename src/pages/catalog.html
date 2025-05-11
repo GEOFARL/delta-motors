@@ -75,7 +75,7 @@
           </div>
 
           <div class="catalog__filters-container">
-            <button class="catalog__filters-button">
+            <button class="catalog__filters-button" id="open-filters">
               <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.70529 16.9867C8.34529 16.9867 7.99279 16.8967 7.66279 16.7167C7.00279 16.3492 6.60529 15.6817 6.60529 14.9317V10.9567C6.60529 10.5817 6.35779 10.0192 6.12529 9.73422L3.32029 6.76422C2.84779 6.29172 2.48779 5.48172 2.48779 4.87422V3.14922C2.48779 1.94922 3.39529 1.01172 4.55029 1.01172H14.4503C15.5903 1.01172 16.5128 1.93422 16.5128 3.07422V4.72422C16.5128 5.51172 16.0403 6.40422 15.5978 6.84672L12.3503 9.71922C12.0353 9.98172 11.7878 10.5592 11.7878 11.0242V14.2492C11.7878 14.9167 11.3678 15.6892 10.8428 16.0042L9.80779 16.6717C9.47029 16.8817 9.08779 16.9867 8.70529 16.9867ZM4.55029 2.13672C4.02529 2.13672 3.61279 2.57922 3.61279 3.14922V4.87422C3.61279 5.15172 3.83779 5.69172 4.12279 5.97672L6.98029 8.98422C7.36279 9.45672 7.73779 10.2442 7.73779 10.9492V14.9242C7.73779 15.4117 8.07529 15.6517 8.21779 15.7267C8.53279 15.8992 8.91529 15.8992 9.20779 15.7192L10.2503 15.0517C10.4603 14.9242 10.6703 14.5192 10.6703 14.2492V11.0242C10.6703 10.2217 11.0603 9.33672 11.6228 8.86422L14.8328 6.02172C15.0878 5.76672 15.3953 5.15922 15.3953 4.71672V3.07422C15.3953 2.55672 14.9753 2.13672 14.4578 2.13672H4.55029Z" fill="#0454FD"/>
                 <path d="M4.99976 8.06245C4.89476 8.06245 4.79726 8.03245 4.69976 7.97995C4.43726 7.81495 4.35476 7.46245 4.51976 7.19995L8.21726 1.27495C8.38226 1.01245 8.72726 0.929953 8.98976 1.09495C9.25226 1.25995 9.33476 1.60495 9.16976 1.86745L5.47226 7.79245C5.36726 7.96495 5.18726 8.06245 4.99976 8.06245Z" fill="#0454FD"/>
@@ -501,6 +501,137 @@
         </div>
       </div>
     </section>
+
+    <div class="modal-overlay" id="filters-modal">
+      <div class="modal">
+        <button class="modal__close"><img alt="close" src="assets/icons/component-icons/x-black.svg" /></button>
+        <div class="modal__content">
+          <h2 class="filters-title">Фільтр пошуку
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.9404 22.6496C10.4604 22.6496 9.99039 22.5296 9.55039 22.2896C8.67039 21.7996 8.14039 20.9096 8.14039 19.9096V14.6096C8.14039 14.1096 7.81039 13.3596 7.50039 12.9796L3.76039 9.01961C3.13039 8.38961 2.65039 7.30961 2.65039 6.49961V4.19961C2.65039 2.59961 3.86039 1.34961 5.40039 1.34961H18.6004C20.1204 1.34961 21.3504 2.57961 21.3504 4.09961V6.29961C21.3504 7.34961 20.7204 8.53961 20.1304 9.12961L15.8004 12.9596C15.3804 13.3096 15.0504 14.0796 15.0504 14.6996V18.9996C15.0504 19.8896 14.4904 20.9196 13.7904 21.3396L12.4104 22.2296C11.9604 22.5096 11.4504 22.6496 10.9404 22.6496ZM5.40039 2.84961C4.70039 2.84961 4.15039 3.43961 4.15039 4.19961V6.49961C4.15039 6.86961 4.45039 7.58961 4.83039 7.96961L8.64039 11.9796C9.15039 12.6096 9.65039 13.6596 9.65039 14.5996V19.8996C9.65039 20.5496 10.1004 20.8696 10.2904 20.9696C10.7104 21.1996 11.2204 21.1996 11.6104 20.9596L13.0004 20.0696C13.2804 19.8996 13.5604 19.3596 13.5604 18.9996V14.6996C13.5604 13.6296 14.0804 12.4496 14.8304 11.8196L19.1104 8.02961C19.4504 7.68961 19.8604 6.87961 19.8604 6.28961V4.09961C19.8604 3.40961 19.3004 2.84961 18.6104 2.84961H5.40039Z" fill="#2A0EFF"/>
+              <path d="M5.99968 10.7503C5.85968 10.7503 5.72968 10.7103 5.59968 10.6403C5.24968 10.4203 5.13968 9.95026 5.35968 9.60026L10.2897 1.70026C10.5097 1.35026 10.9697 1.24026 11.3197 1.46026C11.6697 1.68026 11.7797 2.14026 11.5597 2.49026L6.62968 10.3903C6.48968 10.6203 6.24968 10.7503 5.99968 10.7503Z" fill="#2A0EFF"/>
+            </svg>
+          </h2>
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Марка</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__input">
+                  <input type="text" placeholder="Пошук..." />
+                </div>
+                <ul class="custom-dropdown__list">
+                  <li>Acura</li>
+                  <li>Alfa Romeo</li>
+                  <li>Audi</li>
+                  <li>Bentley</li>
+                  <li>BMW</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Ціна</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__input range">
+                  <input type="number" placeholder="Min" />
+                  <input type="number" placeholder="Max" />
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Рік</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__input range">
+                  <input type="number" placeholder="Min" />
+                  <input type="number" placeholder="Max" />
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Пробіг</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__input range">
+                  <input type="number" placeholder="Min" />
+                  <input type="number" placeholder="Max" />
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Коробка передач</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__checkboxes">
+                  <label><input type="checkbox" /> Автомат</label>
+                  <label><input type="checkbox" /> Механіка</label>
+                  <label><input type="checkbox" /> Задній</label>
+                  <label><input type="checkbox" /> Інша</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Привід</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__checkboxes">
+                  <label><input type="checkbox" /> Передній</label>
+                  <label><input type="checkbox" /> Задній</label>
+                  <label><input type="checkbox" /> Повний</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Тип кузова</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__checkboxes">
+                  <label><input type="checkbox" /> Седан</label>
+                  <label><input type="checkbox" /> Кросовер</label>
+                  <label><input type="checkbox" /> Хетчбек</label>
+                  <label><input type="checkbox" /> Мінівен</label>
+                  <label><input type="checkbox" /> Універсал</label>
+                  <label><input type="checkbox" /> Лікап</label>
+                  <label><input type="checkbox" /> Купе</label>
+                  <label><input type="checkbox" /> Мікроавтобус</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="custom-dropdown">
+              <div class="custom-dropdown__header">
+                <span>Паливо</span>
+              </div>
+              <div class="custom-dropdown__content">
+                <div class="custom-dropdown__checkboxes">
+                  <label><input type="checkbox" /> Бензин</label>
+                  <label><input type="checkbox" /> Дизель</label>
+                  <label><input type="checkbox" /> Газ</label>
+                  <label><input type="checkbox" /> Гібрид</label>
+                  <label><input type="checkbox" /> Електро</label>
+                  <label><input type="checkbox" /> Інше</label>
+                </div>
+              </div>
+            </div>
+
+            <button class="custom-dropdown__button"><img src="assets/icons/component-icons/search.svg" alt="search" />Пошук</button>
+            <button class="clear-filters">Скинути фільтр</button>
+        </div>
+      </div>
+    </div>
   </main>
 
   @@include('../partials/_footer.html')

@@ -3,6 +3,7 @@
 @use "../components//ui/select";
 @use "../components//ui/dropdown";
 @use "../components//ui/card";
+@use "../components//ui/modal";
 @use "../components/header";
 @use "../components/footer";
 @use "../base/colors";
@@ -351,5 +352,50 @@
 @include respond-to-max(lg) {
   .custom-dropdown {
     width: 330px;
+  }
+}
+
+#filters-modal {
+  top: 0;
+  bottom: 0;
+
+  .modal {
+    overflow: auto;
+    height: 100%;
+    padding-top: 100px;
+
+    .filters-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      @include typography.mobile-sb2-10;
+      text-transform: uppercase;
+      color: colors.$color-accent-2;
+
+      position: absolute;
+      top: -60px;
+    }
+
+    &__close {
+      top: 40px !important;
+    }
+
+    .custom-dropdown {
+      width: 100%;
+    }
+
+    .custom-dropdown__button {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .clear-filters {
+      appearance: none;
+      border: none;
+      margin-top: 24px;
+      @include typography.desktop-bt2-16-r;
+      color: colors.$color-accent-2;
+      text-decoration: underline;
+    }
   }
 }

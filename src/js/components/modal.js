@@ -4,6 +4,7 @@ export const initModal = ({ openModalSelectors }) => {
   openModalSelectors.forEach((openModalSelector) => {
     $(openModalSelector).on("click", function () {
       $("#contact-modal").addClass("active");
+      $("#filters-modal").addClass("active");
       $(".mobile-menu").removeClass("open");
       $("body").removeClass("menu-open");
     });
