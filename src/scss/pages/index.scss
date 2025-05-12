@@ -1208,3 +1208,11 @@
     }
   }
 }
+
+.header-menu {
+  a {
+    &:hover {
+      color: colors.$color-accent-2 !important;
+    }
+  }
+}
