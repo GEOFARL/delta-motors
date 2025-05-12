@@ -1085,10 +1085,6 @@
       font-weight: 700;
       margin-right: 16px;
       @include typography.desktop-sb1-24-sb;
-
-      @include respond-to-max(md) {
-        color: colors.$color-txt;
-      }
     }
 
     &__question {
