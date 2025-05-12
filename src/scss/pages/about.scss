@@ -524,10 +524,25 @@
     right: -140px;
     bottom: -110px;
 
+    &-mobile {
+      display: none;
+    }
+
     @include respond-to-max(lg) {
       transform: scale(0.7);
       bottom: -190px;
       right: -340px;
+    }
+
+    @include respond-to-max(md) {
+      display: none;
+
+      &-mobile {
+        display: block;
+        position: absolute;
+        bottom: -185px;
+        left: 0;
+      }
     }
   }
 
@@ -877,10 +892,25 @@
     top: 110px;
     right: -146px;
 
+    &-mobile {
+      display: none;
+    }
+
     @include respond-to-max(2xl) {
       top: unset;
       bottom: -140px;
       right: -46px;
+    }
+
+    @include respond-to-max(md) {
+      display: none;
+
+      &-mobile {
+        display: block;
+        position: absolute;
+        bottom: -90px;
+        left: 0;
+      }
     }
   }
 
