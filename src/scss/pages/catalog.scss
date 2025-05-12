@@ -114,6 +114,7 @@
     position: absolute;
     top: -450px;
     left: -450px;
+    z-index: 0;
     @include respond-to-max(md) {
       display: none;
     }
@@ -134,9 +135,21 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    position: relative;
+    z-index: 1;
 
     color: colors.$color-white;
     @include typography.button;
+
+    a {
+      color: currentColor;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        color: colors.$color-blue-light;
+      }
+    }
 
     .active {
       color: colors.$color-blue-light;
