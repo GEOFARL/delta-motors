@@ -482,6 +482,16 @@
       color: colors.$color-light-grey;
       @include typography.desktop-sb2-28-b;
     }
+
+    .cta-button {
+      .cta-button-text {
+        width: 100%;
+        text-align: center;
+      }
+      .cta-button-icon {
+        flex-shrink: 0;
+      }
+    }
   }
 
   &__line {
