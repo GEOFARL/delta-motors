@@ -153,3 +153,10 @@
     }
   }
 }
+
+.modal-title {
+  @include typography.desktop-h2-54-r;
+  color: colors.$color-accent-2;
+  text-transform: uppercase;
+  margin-bottom: 56px;
+}

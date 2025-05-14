@@ -156,7 +156,7 @@
             </div>
           </div>
 
-          <a href="#contact" class="cta-button">
+          <a href="#contact" class="cta-button" id="open-contact-modal">
             <span class="cta-button-text">Цікавить авто!</span>
             <span class="cta-button-icon">
               <img src="assets/icons/arrows/right-arrow-blue.svg" alt="arrow" />
@@ -333,6 +333,50 @@
       </div>
     </div>
   </div>
+
+  <div class="modal-overlay" id="contact-modal">
+      <div class="modal">
+        <img src="assets/icons/graphic-elements/vector-arrows-6.svg" alt="vector arrows" class="modal__vector-arrows" />
+
+        <button class="modal__close"><img alt="close" src="assets/icons/component-icons/x-black.svg" /></button>
+
+        <div class="modal__content contact-us-modal-content">
+          <h3 class="contact-us-modal-content__title">Залиште Ваш номер телефону, та ми неодмінно Вам зателефонуємо!</h3>
+
+          <form class="smart-form" data-validate="true" novalidate>
+            <div class="form-field" data-field>
+              <input type="text" name="name" required />
+              <label>Ваше ім’я</label>
+              <span class="form-error">Це поле обов’язкове</span>
+            </div>
+
+            <div class="form-field" data-field>
+              <input type="tel" name="phone" required pattern="^\+?\d{10,15}$" />
+              <label>Номер телефону</label>
+              <span class="form-error">Невірний номер телефону</span>
+            </div>
+            
+            <label class="form-checkbox">
+              <input type="checkbox" name="consent" required />
+              Я погоджуюсь на обробку моїх контактних даних
+            </label>
+
+            <button type="submit" class="cta-button">
+              <span class="cta-button-text">Надіслати</span>
+              <span class="cta-button-icon">
+                <img src="assets/icons/arrows/right-arrow-blue.svg" alt="arrow" />
+              </span>
+            </button>
+
+            <img
+              class="smart-form__vector-arrows"
+              src="assets/icons/graphic-elements/vector-arrows-2.svg"
+              alt="vector arrows"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
 
 
   @@include('../partials/_footer.html')
