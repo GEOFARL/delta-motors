@@ -684,7 +684,7 @@
       margin-left: 66px;
     }
 
-    @include respond-to-max(lg) {
+    @include respond-to-max(2xl) {
       text-align: center;
     }
 
@@ -699,7 +699,7 @@
     display: flex;
     align-items: center;
 
-    @include respond-to-max(lg) {
+    @include respond-to-max(2xl) {
       flex-direction: column-reverse;
       gap: 24px;
     }
@@ -918,7 +918,12 @@
     top: 14px;
     left: 520px;
 
+    @include respond-to-max(2xl) {
+      display: none;
+    }
+
     @include respond-to-max(lg) {
+      display: block;
       left: 740px;
       transform: scale(0.8);
     }
