@@ -77,6 +77,7 @@
     display: flex;
     align-items: center;
     gap: 64px;
+    margin-left: 100px;
     @include typography.button;
 
     @include respond-to-max(lg) {
@@ -94,6 +95,10 @@
       &:hover {
         color: colors.$color-blue-light;
       }
+    }
+
+    a.active {
+      color: colors.$color-blue-light;
     }
   }
 
@@ -186,6 +191,10 @@ body.menu-open footer {
     list-style: none;
     flex: 1;
     gap: 40px;
+
+    a.active {
+      color: colors.$color-blue-light;
+    }
 
     li {
       a {
