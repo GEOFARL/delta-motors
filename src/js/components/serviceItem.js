@@ -13,10 +13,10 @@ $(document).ready(function () {
     const targets = [".media-img", ".media-content"];
 
     targets.forEach((selector) => {
-      $(selector).removeClass("active").fadeOut(1200);
+      $(selector).removeClass("active").fadeOut(800);
       $(`${selector}[data-index="${index + 1}"]`)
         .addClass("active")
-        .fadeIn(1200);
+        .fadeIn(800);
     });
   };
 
