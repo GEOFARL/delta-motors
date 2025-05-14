@@ -20609,6 +20609,7 @@
 	  });
 
 	  initSwiper(".main-image-swiper", 40, 1);
+	  initSwiper(".gallery-swiper", 0, 1);
 
 	  initSwiper(".testimonials-swiper", 28, 3, {
 	    350: { slidesPerView: 1, spaceBetween: 40 },
@@ -20638,6 +20639,8 @@
 	  });
 	}
 
+	// import "../components/cardSwiper";
+
 	$(function () {
 	  initMobileMenu();
 	  initHeader();
@@ -20645,6 +20648,8 @@
 	});
 
 	$(window).on("scroll", function () {
+	  const isMobile = () => window.matchMedia("(max-width: 1024px)").matches;
+	  if (isMobile()) return;
 	  const scrollTop = $(window).scrollTop();
 	  const $imageContainer = $(".car-details__images-container");
 	  const $container = $(".car-details__container");
@@ -20661,6 +20666,20 @@
 	    marginTop = Math.min(scrollOffset, maxOffset);
 	  }
 	  $imageContainer.css("margin-top", `${marginTop}px`);
+	});
+
+	$(document).ready(function () {
+	  const $modal = $("#galleryModal");
+	  const $openBtn = $(".car-details__more-images-item-more");
+	  const $closeBtn = $(".gallery-modal__close, .gallery-modal__overlay");
+
+	  $openBtn.on("click", function () {
+	    $modal.addClass("active");
+	  });
+
+	  $closeBtn.on("click", function () {
+	    $modal.removeClass("active");
+	  });
 	});
 
 })();

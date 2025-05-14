@@ -20609,6 +20609,7 @@
 	  });
 
 	  initSwiper(".main-image-swiper", 40, 1);
+	  initSwiper(".gallery-swiper", 0, 1);
 
 	  initSwiper(".testimonials-swiper", 28, 3, {
 	    350: { slidesPerView: 1, spaceBetween: 40 },
