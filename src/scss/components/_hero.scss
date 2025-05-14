@@ -9,7 +9,7 @@
   top: -90px;
   height: 910px;
   padding-top: 230px;
-  background-image: url("../assets/images/car-on-the-road-1.jpeg");
+  background-image: url("../assets/images/car-on-the-road-1.png");
   background-size: cover;
   background-position: 45% 50%;
   z-index: 1;
@@ -20,14 +20,7 @@
 
   @include respond-to-max(md) {
     height: 800px;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: 1;
+    background-image: url("../assets/images/car-on-the-road-1-mobile.png");
   }
 
   .hero-content {
@@ -81,7 +74,7 @@
       }
 
       &--2 {
-        top: -60px;
+        top: -110px;
         right: -530px;
       }
 
@@ -100,39 +93,10 @@
     }
   }
 
-  .bottom-block {
-    height: 74px;
-    width: 100%;
-    position: absolute;
-    z-index: 3;
-    right: calc(-56%);
-    bottom: -8px;
-    background-color: colors.$color-bg-light;
-
-    img {
-      height: 101%;
-      transform: translateX(calc(-100% + 4px));
-    }
-
-    @include respond-to-max(2xl) {
-      img {
-        height: 70%;
-      }
-      bottom: -28px;
-    }
-
-    @include respond-to-max(md) {
-      img {
-        height: 45%;
-      }
-      bottom: -46px;
-    }
-  }
-
   .car-models {
     position: absolute;
     bottom: -70px;
-    left: 51%;
+    left: 47%;
     z-index: 3;
 
     display: flex;

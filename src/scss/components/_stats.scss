@@ -9,8 +9,12 @@
   color: #c4c4c473;
   margin-top: 140px;
 
+  @include respond-to-max(lg) {
+    margin-top: 100px;
+  }
+
   @include respond-to-max(md) {
-    gap: 24px;
+    gap: 20px;
     width: 88%;
     justify-content: space-between;
 
