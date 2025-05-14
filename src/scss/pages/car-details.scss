@@ -176,6 +176,10 @@
     flex-shrink: 0;
     gap: 16.5px;
     align-self: flex-start;
+
+    @include respond-to-max(lg) {
+      align-self: unset;
+    }
   }
 
   &__main-image {
@@ -600,4 +604,86 @@
 
 .form-section {
   margin-bottom: 100px;
+}
+
+.gallery-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999999;
+
+  &.active {
+    display: flex;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  &__content {
+    margin: auto;
+    position: relative;
+    max-width: 80vw;
+    max-height: 80vh;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-color: colors.$color-white;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+
+      img {
+        margin-bottom: -3px;
+      }
+    }
+
+    .swiper-button-next {
+      position: absolute;
+      right: 16px;
+    }
+
+    .swiper-button-prev {
+      position: absolute;
+      left: 16px;
+      img {
+        transform: rotate(180deg);
+      }
+    }
+
+    .swiper-slide img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: -64px;
+    right: -44px;
+    font-size: 32px;
+    color: white;
+    background: none;
+    border: none;
+    z-index: 10001;
+    cursor: pointer;
+  }
+}
+
+.gallery-swiper {
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
 }
