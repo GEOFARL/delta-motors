@@ -175,6 +175,7 @@
     flex-direction: column;
     flex-shrink: 0;
     gap: 16.5px;
+    align-self: flex-start;
   }
 
   &__main-image {
