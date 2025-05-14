@@ -20804,6 +20804,12 @@
 	      $(".mobile-menu").removeClass("open");
 	      $("body").removeClass("menu-open");
 	    });
+
+	    $("#open-packet-modal").on("click", function () {
+	      $("#packet-modal").addClass("active");
+	      $(".mobile-menu").removeClass("open");
+	      $("body").removeClass("menu-open");
+	    });
 	  });
 
 	  $(".modal__close, .modal-overlay").on("click", function (e) {
